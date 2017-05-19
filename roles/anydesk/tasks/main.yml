@@ -1,9 +1,7 @@
 ---
 
 - name: Copy the package
-  get_url:
-    url: "{{ anydesk_deb }}"
-    dest: /tmp/anydesk.deb
+  command: curl -L -o /tmp/anydesk.deb "{{ anydesk_deb }}"
 
 - name: Install AnyDesk
   apt:

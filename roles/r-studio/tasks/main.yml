@@ -21,10 +21,7 @@
     name: r-base-dev
 
 - name: Copy the package
-  get_url:
-    url: "{{ rstudio_deb }}"
-    dest: /tmp/rstudio.deb
-    force: no
+  command: curl -L -o /tmp/rstudio.deb "{{ rstudio_deb }}"
 
 - name: Install R-Studio
   apt:
