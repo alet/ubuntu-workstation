@@ -1,0 +1,19 @@
+---
+# Install soft from standart repository
+
+- name: Install VLC, Audacity, Handbrake, Gimp, Blender, Dropbox, Transmission, PWgen, Keepass2
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items:
+    - vlc
+    - handbrake
+    - handbrake-cli
+    - audacity
+    - gimp
+    - gimp-help-ru
+    - blender
+    - nautilus-dropbox
+    - transmission
+    - pwgen
+    - keepass2

@@ -1,0 +1,23 @@
+---
+# This playbook configure typical workstation for home
+
+- name: Configure as workstation
+  hosts: workstation
+  vars:
+    - timezone: Europe/Kiev
+    - anydesk_deb: 'https://download.anydesk.com/linux/anydesk_2.9.0-1_amd64.deb'
+    - teamviewer_deb: 'http://download.teamviewer.com/download/version_10x/teamviewer_i386.deb'
+    - rstudio_deb: 'https://download1.rstudio.org/rstudio-1.0.143-amd64.deb'
+
+  roles:
+    - deps
+    - soft
+    - r-studio
+    - chrome
+    - skype
+    - viber
+    - anki
+    - calibre
+    - linuxdcpp
+    - teamviewer
+    - anydesk

@@ -1,0 +1,19 @@
+---
+# Steam install
+
+- name: Add repo key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: B05498B7
+    state: present
+
+
+- name: Add repo
+  apt_repository:
+    repo: deb [arch=amd64,i386] http://repo.steampowered.com/steam/ precise steam
+    state: present
+    filename: steam
+
+- name: Add Steam
+  apt:
+    name: steam

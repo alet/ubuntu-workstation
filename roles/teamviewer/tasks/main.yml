@@ -1,0 +1,11 @@
+---
+
+- name: Copy the package
+  get_url:
+    url:  "{{ teamviewer_deb }}"
+    dest: /tmp/teamviewer_i386.deb
+    force: no
+
+- name: Install Teamviewer
+  apt:
+    deb: /tmp/teamviewer_i386.deb

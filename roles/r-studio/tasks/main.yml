@@ -1,0 +1,31 @@
+---
+
+- name: Add repo key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: E084DAB9
+    state: present
+
+- name: Add repo
+  apt_repository:
+    repo: deb http://cran.rstudio.com/bin/linux/ubuntu trusty/
+    state: present
+    filename: r-lang
+
+- name: Install R-Base
+  apt:
+    name: r-base
+
+- name: Install R-Base Dev
+  apt:
+    name: r-base-dev
+
+- name: Copy the package
+  get_url:
+    url: "{{ rstudio_deb }}"
+    dest: /tmp/rstudio.deb
+    force: no
+
+- name: Install R-Studio
+  apt:
+    deb: /tmp/rstudio.deb

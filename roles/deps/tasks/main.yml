@@ -1,0 +1,6 @@
+---
+
+- name: Install aptitude
+  apt:
+    name: aptitude
+    update_cache: yes

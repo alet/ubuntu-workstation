@@ -1,0 +1,5 @@
+---
+
+- name: Install Calibre
+  apt:
+    name: calibre

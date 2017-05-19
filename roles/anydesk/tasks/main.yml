@@ -1,0 +1,10 @@
+---
+
+- name: Copy the package
+  get_url:
+    url: "{{ anydesk_deb }}"
+    dest: /tmp/anydesk.deb
+
+- name: Install AnyDesk
+  apt:
+    deb: /tmp/anydesk.deb

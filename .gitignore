@@ -1,0 +1,7 @@
+stage
+site-test.retry
+site-test.yml
+site.retry
+.vagrant
+*.swp
+*.deb
