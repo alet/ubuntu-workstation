@@ -8,6 +8,7 @@
     - anydesk_deb: 'https://download.anydesk.com/linux/anydesk_2.9.0-1_amd64.deb'
     - teamviewer_deb: 'http://download.teamviewer.com/download/version_10x/teamviewer_i386.deb'
     - rstudio_deb: 'https://download1.rstudio.org/rstudio-1.0.143-amd64.deb'
+    - steam_deb: 'https://steamcdn-a.akamaihd.net/client/installer/steam.deb'
 
   roles:
     - deps
@@ -21,3 +22,4 @@
     - linuxdcpp
     - teamviewer
     - anydesk
+    - steam
