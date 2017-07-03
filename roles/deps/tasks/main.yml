@@ -4,3 +4,7 @@
   apt:
     name: aptitude
     update_cache: yes
+
+- name: Install curl
+  apt:
+    name: curl
