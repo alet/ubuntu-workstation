@@ -10,7 +10,6 @@
   apt_repository:
     repo: deb http://cran.rstudio.com/bin/linux/ubuntu trusty/
     state: present
-    filename: r-lang
 
 - name: Install R-Base
   apt:
