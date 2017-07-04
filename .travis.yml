@@ -11,6 +11,8 @@ addons:
   apt:
     packages:
     - ansible
+before_install:
+  -- sudo apt-get install ansible -y
 
 install:
   # Check ansible version
