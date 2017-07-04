@@ -1,0 +1,21 @@
+---
+language: python
+python: "2.7"
+
+# Use the new container infrastructure
+sudo: enabled
+dist: xenial
+
+# Install ansible
+addons:
+  apt:
+    packages:
+    - ansible
+
+install:
+  # Check ansible version
+  - ansible --version
+
+script:
+  # Basic role syntax check
+  - ansible-playbook -bc local -i 'localhost,' site.yml
