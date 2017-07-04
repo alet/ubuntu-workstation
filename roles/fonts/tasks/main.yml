@@ -1,0 +1,6 @@
+---
+
+- name: Install Microsoft Fonts
+  apt:
+    name: ttf-mscorefonts-installer
+    update_cache: yes
