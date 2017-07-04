@@ -10,11 +10,12 @@ dist: xenial
 addons:
   apt:
     packages:
-    - ansible
-before_install:
-  - sudo apt-get install ansible -y
+    - python-pip
 
 install:
+  # Install ansible
+  - pip install ansible
+
   # Check ansible version
   - ansible --version
 
