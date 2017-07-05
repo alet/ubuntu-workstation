@@ -1,10 +1,9 @@
 ---
 
-- name: Install aptitude
+- name: Install dependencies
   apt:
-    name: aptitude
+    name: "{{ item }}"
     update_cache: yes
-
-- name: Install curl
-  apt:
-    name: curl
+  with_items:
+    - aptitude
+    - curl

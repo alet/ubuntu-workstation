@@ -1,7 +1,7 @@
 ---
 # Install soft from standart repository
 
-- name: Install VLC, Audacity, Handbrake, Gimp, Blender, Dropbox, Transmission, PWgen, Keepass2
+- name: Install VLC, Audacity, Handbrake, Gimp, Blender, Dropbox, Transmission, PWgen, Keepass2, eSpeak
   apt:
     name: "{{ item }}"
     update_cache: yes
