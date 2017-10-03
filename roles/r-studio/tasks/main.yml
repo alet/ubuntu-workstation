@@ -8,7 +8,7 @@
 
 - name: Add repo
   apt_repository:
-    repo: deb http://cran.rstudio.com/bin/linux/ubuntu trusty/
+    repo: deb http://cran.rstudio.com/bin/linux/ubuntu {{ ansible_distribution_release }}/
     state: present
 
 - name: Install R-Base
