@@ -4,8 +4,8 @@
   apt:
     name: "{{ item }}"
   with_items:
-    - libgl1-mesa-dri-lts-xenial:i386
-    - libgl1-mesa-glx-lts-xenial:i386
+    - libgl1-mesa-dri:i386
+    - libgl1-mesa-glx:i386
     - libc6:i386
 
 - name: Copy the package
