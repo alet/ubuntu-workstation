@@ -1,11 +1,12 @@
 ---
 # Install soft from standart repository
 
-- name: Install VLC, Audacity, Handbrake, Gimp, Blender, Dropbox, Transmission, PWgen, Keepass2, eSpeak
+- name: Install VLC, Audacity, Handbrake, Gimp, Blender, Dropbox, Transmission, PWgen, Keepass2, eSpeak, mount.nfs
   apt:
     name: "{{ item }}"
     update_cache: yes
   with_items:
+    - nfs-common
     - vlc
     - handbrake
     - handbrake-cli
