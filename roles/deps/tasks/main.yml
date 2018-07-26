@@ -9,11 +9,7 @@
     - curl
     - bridge-utils
     - nfs-common
-    - wmaker
     - git
-    - wdm
     - alsa-base
-    - wmmoonclock
-    - wmcalclock
-    - wmbattery
-    - xterm
+    - pulseaudio
+    - wpasupplicant

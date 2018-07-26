@@ -1,10 +1,7 @@
 ---
-# Install Viber
 
 - name: Get Viber
-  get_url:
-    dest: /tmp/viber.deb
-    url: http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb
+  command: curl -L -o /tmp/viber.deb "{{ viber_deb }}"
 
 - name: Install Viber
   apt:

@@ -1,0 +1,16 @@
+
+- name: Install WindowMaker and deps
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - xorg
+    - wmaker
+    - wdm
+    - wmmoonclock
+    - wmcalclock
+    - wmbattery
+    - wmacpi
+    - wmifs
+    - wmnd
+    - xterm
+    - games-minesweeper

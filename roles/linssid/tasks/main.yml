@@ -1,0 +1,9 @@
+---
+
+- name: Add LinSSID repo
+  apt_repository:
+    repo: ppa:wseverin/ppa
+
+- name: Install LinSSID
+  apt:
+    name: linssid

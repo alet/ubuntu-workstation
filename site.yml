@@ -9,16 +9,18 @@
     - teamviewer_deb: 'https://download.teamviewer.com/download/teamviewer_i386.deb'
     - rstudio_deb: 'https://download1.rstudio.org/rstudio-1.0.143-amd64.deb'
     - steam_deb: 'https://steamcdn-a.akamaihd.net/client/installer/steam.deb'
+    - viber_deb: 'http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb'
 
   roles:
     - deps
+    - windowmaker
+    - linssid
     - soft
     - r-studio
     - chrome
     - skype
     - viber
     - telegram
-    - anki
     - calibre
     - linuxdcpp
     - teamviewer
