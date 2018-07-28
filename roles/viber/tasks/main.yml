@@ -4,5 +4,4 @@
   command: curl -L -o /tmp/viber.deb "{{ viber_deb }}"
 
 - name: Install Viber
-  apt:
-    deb: /tmp/viber.deb
+  command: /usr/bin/apt install /tmp/viber.deb
