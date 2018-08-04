@@ -1,7 +1,7 @@
 ---
 # Install soft from standart repository
 
-- name: Install VLC, Audacity, Handbrake, Gimp, Blender, Dropbox, Transmission, PWgen, Keepass2, eSpeak, mount.nfs
+- name: Install VLC, Audacity, Handbrake, Gimp, Blender, Dropbox, Transmission, PWgen, Keepass2, eSpeak, mount.nfs, vagrant, iperf, tree, clamav, pv
   apt:
     name: "{{ item }}"
     update_cache: yes
@@ -22,3 +22,8 @@
     - firefox
     - thunderbird
     - anki
+    - vagrant
+    - iperf
+    - tree
+    - clamav
+    - pv
