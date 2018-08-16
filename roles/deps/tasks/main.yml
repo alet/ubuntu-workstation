@@ -13,3 +13,4 @@
     - alsa-base
     - pulseaudio
     - wpasupplicant
+    - python-pygame
