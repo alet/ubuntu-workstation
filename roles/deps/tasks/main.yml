@@ -13,4 +13,5 @@
     - alsa-base
     - pulseaudio
     - wpasupplicant
+    - rfkill
     - python-pygame
