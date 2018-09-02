@@ -27,3 +27,9 @@
     - tree
     - clamav
     - pv
+
+- name: Install youtube-dl
+  pip:
+    name: youtube-dl
+    extra_args: --user
+  become: false
