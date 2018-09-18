@@ -1,0 +1,45 @@
+---
+
+- name: Install dependencies
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items:
+    - qemu-kvm
+
+- name: Install iface-up script
+  copy:
+    dest: "/etc/qemu-ifup"
+    src: "qemu-ifup"
+    group: root
+    owner: root
+    mode: 04755
+
+- name: Old DevID
+  lineinfile:
+    create: yes
+    name: /etc/udev/rules.d/39-usbmuxd.rules
+    line: 'SUBSYSTEM=="usb", ATTR{idVendor}=="05ac", ATTR{idProduct}=="1281", GROUP="disk"'
+    group: root
+    owner: root
+    mode: 0644
+
+- name: New DevID
+  lineinfile:
+    create: yes
+    name: /etc/udev/rules.d/39-usbmuxd.rules
+    line: 'SUBSYSTEM=="usb", ATTR{idVendor}=="05ac", ATTR{idProduct}=="12a2", GROUP="disk"'
+    group: root
+    owner: root
+    mode: 0644
+
+- name: Get user name
+  local_action: command whoami
+  register: username
+  become: false
+
+- name: Add \'username\' to group disk
+  user:
+    name: "{{ username.stdout }}"
+    groups: disk
+    append: yes
