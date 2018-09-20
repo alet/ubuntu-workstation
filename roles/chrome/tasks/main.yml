@@ -11,6 +11,7 @@
   apt_repository:
     repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
     state: present
+    filename: google-chrome
 
 - name: Add Chrome
   apt:
