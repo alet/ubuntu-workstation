@@ -6,6 +6,7 @@
     name: "{{ item }}"
     update_cache: yes
   with_items:
+    - vim
     - vlc
     - handbrake
     - handbrake-cli

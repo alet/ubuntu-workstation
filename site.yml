@@ -12,6 +12,7 @@
     - viber_deb: 'http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb'
 
   roles:
+    - opera
     - deps
     - windowmaker
     - linssid
