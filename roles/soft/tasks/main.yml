@@ -35,6 +35,8 @@
     - dictd
     - dict-freedict-eng-rus
     - zathura-pdf-poppler
+    - texlive-lang-cyrillic
+    - texmaker
 
 - name: Install youtube-dl
   pip:
