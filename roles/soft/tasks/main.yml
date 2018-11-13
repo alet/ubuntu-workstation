@@ -10,6 +10,7 @@
     - bc
     - vim
     - vlc
+    - mercurial
     - handbrake
     - handbrake-cli
     - audacity
@@ -30,6 +31,10 @@
     - tree
     - clamav
     - pv
+    - dict
+    - dictd
+    - dict-freedict-eng-rus
+    - zathura-pdf-poppler
 
 - name: Install youtube-dl
   pip:
