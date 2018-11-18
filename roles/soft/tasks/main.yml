@@ -36,6 +36,7 @@
     - dict-freedict-eng-rus
     - zathura-pdf-poppler
     - texlive-lang-cyrillic
+    - texlive-math-extra
     - texmaker
 
 - name: Install youtube-dl
