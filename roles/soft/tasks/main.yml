@@ -31,12 +31,14 @@
     - tree
     - clamav
     - pv
+    - xzdec
     - dict
     - dictd
     - dict-freedict-eng-rus
     - zathura-pdf-poppler
     - texlive-lang-cyrillic
     - texlive-math-extra
+    - texlive-publishers
     - texmaker
 
 - name: Install youtube-dl
