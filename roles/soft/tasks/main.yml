@@ -19,6 +19,7 @@
     - gimp
     - gimp-help-ru
     - blender
+    - python-sympy
     - nautilus-dropbox
     - transmission
     - stellarium
@@ -43,6 +44,7 @@
     - texlive-math-extra
     - texlive-publishers
     - texmaker
+    - libreoffice-impress
 
 - name: Install youtube-dl
   pip:
