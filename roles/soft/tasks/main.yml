@@ -44,7 +44,13 @@
     - texlive-math-extra
     - texlive-publishers
     - texmaker
+    - texstudio
     - libreoffice-impress
+
+- name: Install LaguageTool
+  snap:
+    name:
+      - languagetool
 
 - name: Install youtube-dl
   pip:
