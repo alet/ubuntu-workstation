@@ -29,6 +29,7 @@
     - glmark2
     - firefox
     - thunderbird
+    - inkscape
     - anki
     - vagrant
     - iperf
@@ -42,6 +43,7 @@
     - zathura-pdf-poppler
     - texlive-lang-cyrillic
     - texlive-math-extra
+    - texlive-bibtex-extra
     - texlive-publishers
     - texmaker
     - texstudio
