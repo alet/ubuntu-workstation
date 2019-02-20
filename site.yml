@@ -12,7 +12,6 @@
     - viber_deb: 'https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb'
 
   roles:
-    - opera
     - deps
     - windowmaker
     - linssid
@@ -20,6 +19,7 @@
     - textract
 #    - r-studio
     - chrome
+    - opera
     - skype
 #    - viber
     - telegram
