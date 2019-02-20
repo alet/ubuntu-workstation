@@ -42,13 +42,13 @@
     - dict-freedict-eng-rus
     - zathura-pdf-poppler
     - texlive-lang-cyrillic
-    - texlive-math-extra
     - texlive-bibtex-extra
     - texlive-publishers
     - texlive-science
+    - libreoffice-impress
     - texmaker
     - texstudio
-    - libreoffice-impress
+    - playonlinux
 
 #- name: Install LanguageTool
 #  snap:

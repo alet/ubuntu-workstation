@@ -7,9 +7,9 @@
     - timezone: Europe/Kiev
     - anydesk_deb: 'https://download.anydesk.com/linux/anydesk_4.0.1-1_amd64.deb'
     - teamviewer_deb: 'https://download.teamviewer.com/download/teamviewer_i386.deb'
-    - rstudio_deb: 'https://download1.rstudio.org/rstudio-1.0.143-amd64.deb'
+    - rstudio_deb: 'https://download1.rstudio.org/rstudio-xenial-1.1.463-amd64.deb'
     - steam_deb: 'https://steamcdn-a.akamaihd.net/client/installer/steam.deb'
-    - viber_deb: 'http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb'
+    - viber_deb: 'https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb'
 
   roles:
     - opera
@@ -18,10 +18,10 @@
     - linssid
     - soft
     - textract
-    - r-studio
+#    - r-studio
     - chrome
     - skype
-    - viber
+#    - viber
     - telegram
     - calibre
     - linuxdcpp
