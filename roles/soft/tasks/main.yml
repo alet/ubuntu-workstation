@@ -50,10 +50,10 @@
     - texstudio
     - libreoffice-impress
 
-- name: Install LaguageTool
-  snap:
-    name:
-      - languagetool
+#- name: Install LanguageTool
+#  snap:
+#    name:
+#      - languagetool
 
 - name: Install youtube-dl
   pip:
