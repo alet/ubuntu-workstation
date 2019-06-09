@@ -10,9 +10,11 @@
     - rstudio_deb: 'https://download1.rstudio.org/rstudio-xenial-1.1.463-amd64.deb'
     - steam_deb: 'https://steamcdn-a.akamaihd.net/client/installer/steam.deb'
     - viber_deb: 'https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb'
+    - dictionary: 'http://dl.babsft.com/info/glossaries/39A/Babylon_English_Russian.BGL'
 
   roles:
     - deps
+    - foreign-lang
     - windowmaker
     - linssid
     - soft
