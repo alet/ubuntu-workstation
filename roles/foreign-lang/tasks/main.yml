@@ -13,10 +13,9 @@
     group: root
     mode: 0755
 
-- name: Download dictionary
-  get_url:
-    url: "{{ dictionary }}"
-    dest: /usr/share/stardict/dic/
-    owner: root
-    group: root
-    mode: 0644
+- name: Unpack dictionary
+  unarchive:
+    src: "{{ dictionary }}"
+    remote_src: yes
+    dest: /usr/share/stardict/dic
+    extra_opts: --strip-components=1
