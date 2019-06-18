@@ -8,7 +8,7 @@
     update_cache: yes
   with_items:
     - qemu-kvm
-    - libvirt
+    - libvirt0
 
 - name: Install iface-up script
   copy:

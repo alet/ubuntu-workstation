@@ -14,7 +14,7 @@
 
   roles:
     - deps
-    - qemu
+    - virt
     - windowmaker
     - fonts
     - linssid
