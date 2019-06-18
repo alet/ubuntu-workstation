@@ -34,6 +34,7 @@
     - inkscape
     - anki
     - vagrant
+    - virt-manager
     - iperf
     - tree
     - clamav

@@ -14,8 +14,9 @@
 
   roles:
     - deps
-    - foreign-lang
+    - qemu
     - windowmaker
+    - fonts
     - linssid
     - soft
     - textract
@@ -31,5 +32,4 @@
     - teamviewer
     - anydesk
     - steam
-    - fonts
-    - qemu
+    - foreign-lang

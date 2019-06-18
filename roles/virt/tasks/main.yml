@@ -1,11 +1,14 @@
 ---
 
+# Install virtualization soft
+
 - name: Install dependencies
   apt:
     name: "{{ item }}"
     update_cache: yes
   with_items:
     - qemu-kvm
+    - libvirt
 
 - name: Install iface-up script
   copy:
@@ -41,5 +44,11 @@
 - name: Add \'username\' to group disk
   user:
     name: "{{ username.stdout }}"
+    groups: disk
+    append: yes
+
+- name: Add libvirt-qemu to group disk
+  user:
+    name: libvirt-qemu
     groups: disk
     append: yes
