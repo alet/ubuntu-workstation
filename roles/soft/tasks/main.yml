@@ -52,6 +52,7 @@
     - texmaker
     - texstudio
     - playonlinux
+    - xpad
 
 #- name: Install LanguageTool
 #  snap:
