@@ -9,6 +9,6 @@ pip install --user ansible
 sudo apt-get install git
 git clone git@github.com:alet/ubuntu-workstation.git
 cd ubuntu-workstation
-ansible-playbook --ask-become-pass -bc local -i 'localhost,' site.yml
+ansible-playbook --ask-become-pass -c local -i 'localhost,' site.yml
 ```
 Note: textract will be installed in home directory

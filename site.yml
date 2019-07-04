@@ -3,14 +3,9 @@
 
 - name: Configure as workstation
   hosts: all
+  become: yes
   vars:
     - timezone: Europe/Kiev
-    - anydesk_deb: 'https://download.anydesk.com/linux/anydesk_4.0.1-1_amd64.deb'
-    - teamviewer_deb: 'https://download.teamviewer.com/download/linux/teamviewer_amd64.deb'
-    - rstudio_deb: 'https://download1.rstudio.org/rstudio-xenial-1.1.463-amd64.deb'
-    - steam_deb: 'https://steamcdn-a.akamaihd.net/client/installer/steam.deb'
-    - viber_deb: 'https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb'
-    - dictionary: http://download.huzheng.org/ru/stardict-mueller7-2.4.2.tar.bz2
 
   roles:
     - deps
@@ -25,7 +20,6 @@
     - opera
     - vivaldi
     - skype
-#    - viber
     - telegram
     - calibre
     - linuxdcpp
