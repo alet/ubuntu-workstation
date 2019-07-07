@@ -54,6 +54,20 @@
     - playonlinux
     - xpad
 
+- name: Install Spyder3, Python version of Matlab
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - python3-sympy
+    - pandoc-citeproc
+    - fonts-linuxlibertine
+    - python3-sphinx-rtd-theme
+    - texlive-generic-extra
+    - latexmk
+    - python3-pandas
+    - python3-scipy 
+    - spyder3
+
 #- name: Install LanguageTool
 #  snap:
 #    name:
