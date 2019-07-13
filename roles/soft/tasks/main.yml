@@ -53,6 +53,7 @@
     - texstudio
     - playonlinux
     - xpad
+    - xclip
 
 - name: Install Spyder3, Python version of Matlab
   apt:
