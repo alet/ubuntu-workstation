@@ -1,0 +1,60 @@
+---
+
+# Change resolver to local Unbound
+
+- name: Install Dependencies
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items:
+    - resolvconf
+    - unbound
+
+- name: Install service to update root.hints
+  copy:
+    dest: /etc/systemd/system/roothints.service
+    owner: root
+    group: root
+    mode: 0644
+    src: "roothints.service"
+
+- name: Install timer to update root.hints
+  copy:
+    dest: /etc/systemd/system/roothints.timer
+    owner: root
+    group: root
+    mode: 0644
+    src: "roothints.timer"
+
+- name: Enable timer to update root.hints
+  systemd:
+    state: started
+    enabled: yes
+    name: roothints.timer
+
+- name: Download root.hints
+  systemd:
+    state: started
+    enabled: no
+    name: roothints.service
+
+- name: Conifgure unbound
+  copy:
+    dest: /etc/unbound/unbound.conf.d/main.conf
+    owner: root
+    group: root
+    mode: 0644
+    src: "main.conf"
+    
+
+- name: Enable and run unbound
+  systemd:
+    state: started
+    enabled: yes
+    name: unbound
+
+- name: Disable systemd-resoved
+  systemd:
+    state: stopped
+    enabled: no
+    name: systemd-resolved

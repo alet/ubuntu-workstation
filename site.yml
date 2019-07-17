@@ -8,6 +8,7 @@
     - timezone: Europe/Kiev
 
   roles:
+    - unbound
     - deps
     - virt
     - windowmaker
