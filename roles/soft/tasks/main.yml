@@ -80,5 +80,5 @@
 - name: Install youtube-dl
   pip:
     name: youtube-dl
-    extra_args: --user
+    extra_args: "--user --compile"
   become: false

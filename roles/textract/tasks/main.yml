@@ -25,5 +25,5 @@
 - name: Install textract
   pip:
     name: textract
-    extra_args: --user
+    extra_args: "--user --compile"
   become: false
