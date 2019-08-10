@@ -15,13 +15,14 @@
     - mercurial
     - handbrake
     - handbrake-cli
+    - mencoder
+    - mplayer-doc
     - audacity
     - soundconverter
     - easytag
     - gimp
     - gimp-help-ru
     - blender
-    - python-sympy
     - nautilus-dropbox
     - transmission
     - stellarium
@@ -44,6 +45,7 @@
     - dictd
     - dict-freedict-eng-rus
     - zathura-pdf-poppler
+    - zathura-djvu
     - texlive-lang-cyrillic
     - texlive-bibtex-extra
     - texlive-publishers
