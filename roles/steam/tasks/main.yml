@@ -10,6 +10,8 @@
 
 - name: Copy the package
   command: curl -L -o /tmp/steam.deb "{{ steam_deb }}"
+  args:
+    warn: False
 
 - name: Accept question
   debconf:

@@ -2,6 +2,8 @@
 
 - name: Copy the package
   command: curl -L -o /tmp/anydesk.deb "{{ anydesk_deb }}"
+  args:
+    warn: False
 
 - name: Install AnyDesk
   apt:
