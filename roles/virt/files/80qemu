@@ -1,0 +1,1 @@
+DPKG::Post-Invoke {"/usr/bin/test -e /usr/lib/qemu/qemu-bridge-helper && /bin/chmod 4755 /usr/lib/qemu/qemu-bridge-helper";};

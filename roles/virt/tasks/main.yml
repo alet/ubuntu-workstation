@@ -10,6 +10,14 @@
     - qemu-kvm
     - libvirt0
 
+- name: Install bridge-helper permission setupper
+  copy:
+    dest: "/etc/apt/apt.conf.d/80qemu"
+    src: "80qemu"
+    group: root
+    owner: root
+    mode: 0644
+
 - name: Install iface-up script
   copy:
     dest: "/etc/qemu-ifup"
