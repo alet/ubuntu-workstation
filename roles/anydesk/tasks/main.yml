@@ -1,10 +1,18 @@
 ---
+# AnyDesk install
 
-- name: Copy the package
-  command: curl -L -o /tmp/anydesk.deb "{{ anydesk_deb }}"
-  args:
-    warn: False
+- name: Add repo key
+  apt_key:
+    url: https://keys.anydesk.com/repos/DEB-GPG-KEY
+    state: present
 
-- name: Install AnyDesk
+
+- name: Add repo
+  apt_repository:
+    repo: deb http://deb.anydesk.com/ all main
+    state: present
+    filename: anydesk
+
+- name: Add Anydesk
   apt:
-    deb: /tmp/anydesk.deb
+    name: anydesk
