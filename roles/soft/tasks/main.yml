@@ -82,3 +82,10 @@
     name: youtube-dl
     extra_args: "--user --compile"
   become: false
+
+- name: Add \'username\' to group dialout for EggBot
+  user:
+    name: "{{ username.stdout }}"
+    groups: dialout
+    append: yes
+
