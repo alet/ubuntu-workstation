@@ -1,0 +1,14 @@
+---
+
+- name: Add riot.im repo key
+  apt_key:
+    url: https://packages.riot.im/debian/riot-im-archive-keyring.gpg
+
+- name: Add riot.im repo
+  apt_repository:
+    repo: deb [arch=amd64] https://packages.riot.im/debian/ bionic main
+    filename: riot-im
+
+- name: Install riot.im
+  apt:
+    name: riot-web

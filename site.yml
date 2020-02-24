@@ -8,6 +8,7 @@
     - timezone: Europe/Kiev
 
   roles:
+    - riot.im
     - unbound
     - deps
     - virt
