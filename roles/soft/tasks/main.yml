@@ -82,6 +82,11 @@
 #    name:
 #      - languagetool
 
+- name: Install githug
+  gem:
+    name: githug
+    user_install: no
+
 - name: Install youtube-dl
   pip:
     name: youtube-dl
