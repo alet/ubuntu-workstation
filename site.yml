@@ -8,9 +8,9 @@
     - timezone: Europe/Kiev
 
   roles:
-    - riot.im
-    - unbound
+    - develop
     - deps
+    - unbound
     - virt
     - windowmaker
     - fonts
@@ -22,6 +22,7 @@
     - opera
     - vivaldi
     - skype
+    - riot.im
     - telegram
     - calibre
     - linuxdcpp
