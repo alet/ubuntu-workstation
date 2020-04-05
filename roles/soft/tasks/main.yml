@@ -8,74 +8,72 @@
 
 - name: Install VLC, Audacity, Handbrake, Gimp, Blender, Dropbox, Transmission, PWgen, Keepass2, eSpeak, mount.nfs, vagrant, iperf, tree, clamav, pv
   apt:
-    name: "{{ item }}"
+    name:
+      - dc
+      - bc
+      - vim
+      - vlc
+      - cmus
+      - audacious
+      - mercurial
+      - handbrake
+      - handbrake-cli
+      - mencoder
+      - mplayer-doc
+      - audacity
+      - soundconverter
+      - easytag
+      - gimp
+      - gimp-help-ru
+      - blender
+      - nautilus-dropbox
+      - transmission
+      - stellarium
+      - pwgen
+      - keepassxc
+      - espeak
+      - glmark2
+      - firefox
+      - thunderbird
+      - inkscape
+      - anki
+      - vagrant
+      - virt-manager
+      - iperf
+      - tree
+      - clamav
+      - pv
+      - xzdec
+      - dict
+      - dictd
+      - dict-freedict-eng-rus
+      - zathura-pdf-poppler
+      - zathura-djvu
+      - texlive-lang-cyrillic
+      - texlive-bibtex-extra
+      - texlive-publishers
+      - texlive-science
+      - libreoffice-impress
+      - texmaker
+      - texstudio
+      - playonlinux
+      - xpad
+      - xclip
+      - mutt
     update_cache: yes
-  with_items:
-    - dc
-    - bc
-    - vim
-    - vlc
-    - cmus
-    - audacious
-    - mercurial
-    - handbrake
-    - handbrake-cli
-    - mencoder
-    - mplayer-doc
-    - audacity
-    - soundconverter
-    - easytag
-    - gimp
-    - gimp-help-ru
-    - blender
-    - nautilus-dropbox
-    - transmission
-    - stellarium
-    - pwgen
-    - keepassxc
-    - espeak
-    - glmark2
-    - firefox
-    - thunderbird
-    - inkscape
-    - anki
-    - vagrant
-    - virt-manager
-    - iperf
-    - tree
-    - clamav
-    - pv
-    - xzdec
-    - dict
-    - dictd
-    - dict-freedict-eng-rus
-    - zathura-pdf-poppler
-    - zathura-djvu
-    - texlive-lang-cyrillic
-    - texlive-bibtex-extra
-    - texlive-publishers
-    - texlive-science
-    - libreoffice-impress
-    - texmaker
-    - texstudio
-    - playonlinux
-    - xpad
-    - xclip
-    - mutt
 
 - name: Install Spyder3, Python version of Matlab
   apt:
-    name: "{{ item }}"
-  with_items:
-    - python3-sympy
-    - pandoc-citeproc
-    - fonts-linuxlibertine
-    - python3-sphinx-rtd-theme
-    - texlive-generic-extra
-    - latexmk
-    - python3-pandas
-    - python3-scipy 
-    - spyder3
+    name:
+      - python3-sympy
+      - pandoc-citeproc
+      - fonts-linuxlibertine
+      - python3-sphinx-rtd-theme
+      - texlive-generic-extra
+      - latexmk
+      - python3-pandas
+      - python3-scipy 
+      - spyder3
 
 #- name: Install LanguageTool
 #  snap:

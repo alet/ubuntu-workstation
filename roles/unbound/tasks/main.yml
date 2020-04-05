@@ -4,11 +4,10 @@
 
 - name: Install Dependencies
   apt:
-    name: "{{ item }}"
+    name:
+      - resolvconf
+      - unbound
     update_cache: yes
-  with_items:
-    - resolvconf
-    - unbound
 
 - name: Install service to update root.hints
   copy:

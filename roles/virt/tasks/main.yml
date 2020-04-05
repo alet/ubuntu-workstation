@@ -4,11 +4,10 @@
 
 - name: Install dependencies
   apt:
-    name: "{{ item }}"
+    name:
+      - qemu-kvm
+      - libvirt0
     update_cache: yes
-  with_items:
-    - qemu-kvm
-    - libvirt0
 
 - name: Install bridge-helper permission setupper
   copy:

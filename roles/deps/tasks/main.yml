@@ -2,16 +2,15 @@
 
 - name: Install dependencies
   apt:
-    name: "{{ item }}"
+    name:
+      - ntpdate
+      - curl
+      - bridge-utils
+      - nfs-common
+      - git
+      - alsa-base
+      - pulseaudio
+      - wpasupplicant
+      - rfkill
+      - python-pygame
     update_cache: yes
-  with_items:
-    - ntpdate
-    - curl
-    - bridge-utils
-    - nfs-common
-    - git
-    - alsa-base
-    - pulseaudio
-    - wpasupplicant
-    - rfkill
-    - python-pygame
