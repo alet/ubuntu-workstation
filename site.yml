@@ -8,7 +8,6 @@
     - timezone: Europe/Kiev
 
   roles:
-    - develop
     - deps
     - unbound
     - virt
@@ -16,6 +15,7 @@
     - fonts
     - linssid
     - soft
+    - develop
     - textract
 #    - r-studio
     - chrome
@@ -24,7 +24,7 @@
     - skype
     - riot.im
     - telegram
-    - calibre
+#    - calibre
     - linuxdcpp
     - teamviewer
     - anydesk
