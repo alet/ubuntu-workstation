@@ -25,5 +25,3 @@
 - name: Add .NET Core SDK
   apt:
     name: dotnet-sdk-3.1
-
-
