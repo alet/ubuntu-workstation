@@ -7,11 +7,6 @@
       - libgl1-mesa-glx:i386
       - libc6:i386
 
-- name: Copy the package
-  command: curl -L -o /tmp/steam.deb "{{ steam_deb }}"
-  args:
-    warn: False
-
 - name: Accept question
   debconf:
     name: steam
@@ -28,4 +23,4 @@
 
 - name: Add Steam
   apt:
-    deb: /tmp/steam.deb
+    deb: "{{ steam_deb }}"
