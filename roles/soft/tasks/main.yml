@@ -60,6 +60,8 @@
       - xpad
       - xclip
       - mutt
+      - gramps
+      - ncdu
     update_cache: yes
 
 - name: Install Spyder3, Python version of Matlab
