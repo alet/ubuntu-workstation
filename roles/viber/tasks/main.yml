@@ -1,0 +1,5 @@
+---
+
+- name: Install Viber
+  apt:
+    deb: "{{ viber_deb }}"
