@@ -6,13 +6,13 @@
   apt:
     deb: https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
 
-- name: Add repo universe
-  apt_repository:
-    repo: "{{ item }}"
-  with_items:
-    - 'deb http://archive.ubuntu.com/ubuntu/ bionic universe'
-    - 'deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe'
-    - 'deb http://security.ubuntu.com/ubuntu/ bionic-security universe'
+#- name: Add repo universe
+#  apt_repository:
+#    repo: "{{ item }}"
+#  with_items:
+#    - 'deb http://archive.ubuntu.com/ubuntu/ bionic universe'
+#    - 'deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe'
+#    - 'deb http://security.ubuntu.com/ubuntu/ bionic-security universe'
 
 - name: Add https transport
   apt:
