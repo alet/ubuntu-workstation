@@ -54,6 +54,7 @@
       - texlive-bibtex-extra
       - texlive-publishers
       - texlive-science
+      - texlive-xetex
       - libreoffice-impress
       - libreoffice-calc
       - libreoffice-writer
