@@ -1,6 +1,15 @@
 ---
 
+- name: Accept license
+  debconf:
+    name: ttf-mscorefonts-installer
+    question: 'msttcorefonts/accepted-mscorefonts-eula'
+    value: 'true'
+    vtype: 'select'
+
 - name: Install Microsoft Fonts
   apt:
-    name: ttf-mscorefonts-installer
-    update_cache: yes
+    # 18.04 Fix
+    deb: http://ftp.de.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.6_all.deb
+#    name: ttf-mscorefonts-installer
+#    update_cache: yes
