@@ -55,6 +55,9 @@
       - texlive-publishers
       - texlive-science
       - libreoffice-impress
+      - libreoffice-calc
+      - libreoffice-writer
+      - libreoffice-l10n-ru
       - texmaker
       - texstudio
       - playonlinux
