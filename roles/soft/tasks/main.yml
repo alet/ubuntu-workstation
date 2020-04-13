@@ -47,6 +47,7 @@
       - dict
       - dictd
       - dict-freedict-eng-rus
+      - nomacs
       - zathura-pdf-poppler
       - zathura-djvu
       - texlive-lang-cyrillic
@@ -62,6 +63,8 @@
       - mutt
       - gramps
       - ncdu
+      - parallel
+      - i3
     update_cache: yes
 
 - name: Install Spyder3, Python version of Matlab
