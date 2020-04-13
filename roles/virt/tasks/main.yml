@@ -25,6 +25,15 @@
     owner: root
     mode: 04755
 
+- name: HDD
+  lineinfile:
+    create: yes
+    name: /etc/udev/rules.d/39-usbmuxd.rules
+    line: 'SUBSYSTEM=="usb", ATTR{idVendor}=="152d", ATTR{idProduct}=="2336", GROUP="disk"'
+    group: root
+    owner: root
+    mode: 0644
+
 - name: Old DevID
   lineinfile:
     create: yes
