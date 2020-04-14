@@ -2,14 +2,6 @@
 
 # Install virtualization soft
 
-- name: Install dependencies
-  apt:
-    name:
-      - qemu-kvm
-      - libvirt0
-      - libnm-glib-dev
-    update_cache: yes
-
 - name: Install bridge-helper permission setupper
   copy:
     dest: "/etc/apt/apt.conf.d/80qemu"
@@ -17,6 +9,14 @@
     group: root
     owner: root
     mode: 0644
+
+- name: Install dependencies
+  apt:
+    name:
+      - qemu-kvm
+      - libvirt0
+      - libnm-glib-dev
+    update_cache: yes
 
 - name: Install iface-up script
   copy:
