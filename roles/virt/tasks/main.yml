@@ -7,6 +7,7 @@
     name:
       - qemu-kvm
       - libvirt0
+      - libnm-glib-dev
     update_cache: yes
 
 - name: Install bridge-helper permission setupper
@@ -24,6 +25,22 @@
     group: root
     owner: root
     mode: 04755
+
+- name: Create bridge
+  nmcli:
+    conn_name: 'br0'
+    ifname: 'br0'
+    dhcp_client_id: 'workstation'
+    type: 'bridge'
+    state: 'present'
+
+- name: Add network card to bridge
+  nmcli:
+    conn_name: "{{ wired_card }}"
+    master: 'br0'
+    ifname: "{{ wired_card }}"
+    type: 'bridge-slave'
+    state: 'present'
 
 - name: HDD
   lineinfile:
@@ -56,6 +73,12 @@
   local_action: command whoami
   register: username
   become: false
+
+- name: Add USERNAME to group kvm
+  user:
+    name: "{{ username.stdout }}"
+    groups: kvm
+    append: yes
 
 - name: Add USERNAME to group disk
   user:
