@@ -6,7 +6,7 @@
     repo: ppa:phoerious/keepassxc
 
 
-- name: Install VLC, Audacity, Handbrake, Gimp, Blender, Dropbox, Transmission, PWgen, Keepass2, eSpeak, mount.nfs, vagrant, iperf, tree, clamav, pv
+- name: Install VLC, Audacity, Handbrake, Gimp, Blender, Dropbox, Transmission, PWgen, Keepass2, eSpeak, mount.nfs, iperf, tree, clamav, pv
   apt:
     name:
       - dc
@@ -37,7 +37,6 @@
       - thunderbird
       - inkscape
       - anki
-      - vagrant
       - virt-manager
       - iperf
       - tree

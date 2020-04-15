@@ -16,6 +16,8 @@
       - qemu-kvm
       - libvirt0
       - libnm-glib-dev
+      - vagrant
+      - virtualbox
     update_cache: yes
 
 - name: Install iface-up script
