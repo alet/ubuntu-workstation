@@ -88,6 +88,7 @@
 #  snap:
 #    name:
 #      - languagetool
+#      - google-play-music-desktop-player
 
 - name: Install githug
   gem:
