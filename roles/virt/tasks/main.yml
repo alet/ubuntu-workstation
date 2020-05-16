@@ -91,6 +91,22 @@
     groups: disk
     append: yes
 
+- name: Install permanent kvm options
+  copy:
+    dest: "/etc/modprobe.d/kvm.conf"
+    src: "kvm.conf"
+    group: root
+    owner: root
+    mode: 0644
+
+- name: Install bridge permission
+  copy:
+    dest: "/etc/qemu/bridge.conf"
+    src: "bridge.conf"
+    group: root
+    owner: root
+    mode: 0644
+
 - name: Add libvirt-qemu to group disk
   user:
     name: libvirt-qemu
