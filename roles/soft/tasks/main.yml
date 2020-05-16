@@ -35,6 +35,7 @@
       - glmark2
       - firefox
       - thunderbird
+      - kcharselect
       - inkscape
       - anki
       - virt-manager
