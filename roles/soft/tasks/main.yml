@@ -37,6 +37,11 @@
       - thunderbird
       - kcharselect
       - inkscape
+      - sigil
+      - okular-extra-backends
+      - nomacs
+      - zathura-pdf-poppler
+      - zathura-djvu
       - anki
       - virt-manager
       - iperf
@@ -47,9 +52,6 @@
       - dict
       - dictd
       - dict-freedict-eng-rus
-      - nomacs
-      - zathura-pdf-poppler
-      - zathura-djvu
       - texlive-lang-cyrillic
       - texlive-bibtex-extra
       - texlive-publishers

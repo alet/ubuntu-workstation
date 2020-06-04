@@ -13,4 +13,5 @@
       - wpasupplicant
       - rfkill
       - python-pygame
+      - openssh-server
     update_cache: yes
