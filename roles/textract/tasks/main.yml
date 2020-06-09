@@ -20,6 +20,7 @@
       - sox
       - libjpeg-dev
       - swig
+      - liblingua-stem-snowball-perl
 
 - name: Install textract
   pip:
