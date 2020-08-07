@@ -35,6 +35,7 @@
       - espeak
       - glmark2
       - firefox
+      - w3m
       - thunderbird
       - kcharselect
       - inkscape
