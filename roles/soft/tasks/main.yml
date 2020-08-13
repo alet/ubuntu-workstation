@@ -98,6 +98,7 @@
   gem:
     name: githug
     user_install: no
+    state: latest
 
 - name: Install youtube-dl
   pip:
