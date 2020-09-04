@@ -73,6 +73,7 @@
       - ncdu
       - parallel
       - i3
+      - zeal
     update_cache: yes
 
 - name: Install Spyder3, Python version of Matlab
