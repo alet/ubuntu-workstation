@@ -1,6 +1,10 @@
 ---
 # Install tools helping with english language books
 
+- name: Add GoldenDict
+  apt:
+    name: goldendict
+
 - name: Add console StarDict
   apt:
     name: sdcv
