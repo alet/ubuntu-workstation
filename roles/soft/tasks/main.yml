@@ -52,6 +52,7 @@
       - clamav
       - pv
       - xzdec
+      - zstd
       - dict
       - dictd
       - dict-freedict-eng-rus
