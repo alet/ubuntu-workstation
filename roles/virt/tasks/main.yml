@@ -99,6 +99,14 @@
     owner: root
     mode: 0644
 
+- name: Create qemu directory
+  file:
+    path: "/etc/qemu"
+    state: directory
+    mode: 755
+    group: root
+    owner: root
+
 - name: Install bridge permission
   copy:
     dest: "/etc/qemu/bridge.conf"
