@@ -15,7 +15,7 @@
     name:
       - qemu-kvm
       - libvirt0
-      - libnm-glib-dev
+      - libnm-dev
       - virtualbox
     update_cache: yes
 
@@ -32,7 +32,7 @@
     mode: 04755
 
 - name: Create bridge
-  nmcli:
+  community.general.nmcli:
     conn_name: 'br0'
     ifname: 'br0'
     dhcp_client_id: 'workstation'
@@ -40,7 +40,7 @@
     state: 'present'
 
 - name: Add network card to bridge
-  nmcli:
+  community.general.nmcli:
     conn_name: "{{ wired_card }}"
     master: 'br0'
     ifname: "{{ wired_card }}"
