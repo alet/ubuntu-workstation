@@ -9,7 +9,7 @@
 
 - name: Install Microsoft Fonts
   apt:
-    # 18.04 Fix
-    deb: http://ftp.de.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.7_all.deb
+    # 20.04 Fix
+    deb: http://ftp.de.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.8_all.deb
 #    name: ttf-mscorefonts-installer
 #    update_cache: yes
