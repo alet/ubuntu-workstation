@@ -85,7 +85,6 @@
       - pandoc-citeproc
       - fonts-linuxlibertine
       - python3-sphinx-rtd-theme
-      - texlive-generic-extra
       - latexmk
       - python3-pandas
       - python3-scipy 
