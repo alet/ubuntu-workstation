@@ -1,0 +1,15 @@
+---
+# Install Church Slavonic keyboard. More details: https://sci.ponomar.net/ru/keyboard.html
+#
+
+- name: Add Ponomar's repo
+  apt_repository:
+    repo: ppa:aleksandr-andreev/sci
+    codename: bionic
+
+- name: Install Churhc Slavonic keyboard
+  apt:
+    name:
+      - m17n-cu
+    update_cache: yes
+
