@@ -6,9 +6,9 @@
 
 - name: Add riot.im repo
   apt_repository:
-    repo: deb [arch=amd64] https://packages.riot.im/debian/ bionic main
+    repo: deb [arch=amd64] https://packages.riot.im/debian/ default main
     filename: riot-im
 
 - name: Install riot.im
   apt:
-    name: riot-web
+    name: element-desktop
