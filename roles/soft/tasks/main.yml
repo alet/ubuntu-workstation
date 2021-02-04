@@ -104,6 +104,20 @@
     user_install: no
     state: latest
 
+- name: Duplicity depends
+  apt:
+    name:
+      - gettext
+      - librsync-dev
+      - gpg
+    update_cache: yes
+
+- name: Install duplicity
+  pip:
+    name: duplicity
+    extra_args: "--user --compile"
+  become: false
+
 - name: Install youtube-dl
   pip:
     name: youtube-dl
