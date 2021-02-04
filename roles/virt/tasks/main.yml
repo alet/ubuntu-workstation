@@ -80,6 +80,15 @@
     owner: root
     mode: 0644
 
+- name: Flash
+  lineinfile:
+    create: yes
+    name: /etc/udev/rules.d/39-usbmuxd.rules
+    line: 'SUBSYSTEM=="usb", ATTR{idVendor}=="1005", ATTR{idProduct}=="b113", GROUP="disk"'
+    group: root
+    owner: root
+    mode: 0644
+
 - name: Get user name
   local_action: command whoami
   register: username
