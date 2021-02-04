@@ -50,6 +50,7 @@
       - linssid
       - iperf
       - tree
+      - task-spooler
       - clamav
       - pv
       - xzdec
