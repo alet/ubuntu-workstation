@@ -65,6 +65,7 @@
       - texlive-publishers
       - texlive-science
       - texlive-xetex
+      - texlive-luatex
       - libreoffice-impress
       - libreoffice-calc
       - libreoffice-writer
