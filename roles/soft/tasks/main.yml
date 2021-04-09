@@ -17,9 +17,6 @@
       - cmus
       - unrar
       - audacious
-      - mercurial
-      - handbrake
-      - handbrake-cli
       - mencoder
       - mplayer-doc
       - audacity
@@ -27,18 +24,12 @@
       - easytag
       - gimp
       - gimp-help-ru
-      - darktable
-      - blender
-      - nautilus-dropbox
-      - transmission
-      - wireshark
-      - stellarium
       - pwgen
       - keepassxc
       - espeak
-      - glmark2
       - firefox
       - w3m
+      - lynx
       - thunderbird
       - kcharselect
       - inkscape
@@ -47,10 +38,7 @@
       - nomacs
       - zathura-pdf-poppler
       - zathura-djvu
-      - pdf-presenter-console
       - anki
-      - virt-manager
-      - linssid
       - iperf
       - tree
       - multitail
@@ -72,30 +60,13 @@
       - libreoffice-calc
       - libreoffice-writer
       - libreoffice-l10n-ru
-      - texmaker
-      - texstudio
       - winbind
       - xpad
       - xclip
       - mutt
-      - gramps
       - ncdu
-      - parallel
       - i3
-      - zeal
     update_cache: yes
-
-- name: Install Spyder3, Python version of Matlab
-  apt:
-    name:
-      - python3-sympy
-      - pandoc-citeproc
-      - fonts-linuxlibertine
-      - python3-sphinx-rtd-theme
-      - latexmk
-      - python3-pandas
-      - python3-scipy 
-      - spyder3
 
 #- name: Install LanguageTool
 #  snap:
@@ -128,10 +99,3 @@
     name: youtube-dl
     extra_args: "--user --compile"
   become: false
-
-- name: Add USERNAME to group dialout for EggBot
-  user:
-    name: "{{ username.stdout }}"
-    groups: dialout
-    append: yes
-

@@ -11,23 +11,11 @@
   roles:
     - deps
     - unbound
-    - virt
-    - windowmaker
     - fonts
 #    - slavonic
     - soft
-    - develop
     - textract
 #    - r-studio
-    - chrome
-    - opera
-    - vivaldi
-    - viber
-    - skype
-    - riot.im
-    - telegram
+    - palemoon
     - calibre
-    - anydesk
-    - games
     - foreign-lang
-    - teamviewer
