@@ -2,9 +2,7 @@
 - name: Install WindowMaker and deps
   apt:
     name:
-      - xorg
       - wmaker
-      - wdm
       - wmmoonclock
       - wmcalclock
       - wmbattery
