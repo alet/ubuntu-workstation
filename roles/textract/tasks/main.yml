@@ -4,7 +4,7 @@
   apt:
     name:
       - libpulse-dev
-      - python-dev
+      - python3-dev
       - libxml2-dev
       - libxslt1-dev
       - antiword
