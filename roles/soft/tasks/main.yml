@@ -13,6 +13,7 @@
       - bc
       - vim
       - vlc
+      - vlc-plugin-bittorrent
       - cmus
       - unrar
       - audacious
@@ -50,6 +51,7 @@
       - linssid
       - iperf
       - tree
+      - multitail
       - task-spooler
       - clamav
       - pv
