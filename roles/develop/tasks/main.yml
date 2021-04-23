@@ -29,3 +29,9 @@
 - name: Add .NET Core SDK
   apt:
     name: dotnet-sdk-3.1
+
+- name: Perl tools for developing
+  apt:
+    name:
+      - cpanminus
+      - perl-doc
