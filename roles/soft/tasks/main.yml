@@ -27,9 +27,11 @@
       - easytag
       - gimp
       - gimp-help-ru
+      - darktable
       - blender
       - nautilus-dropbox
       - transmission
+      - wireshark
       - stellarium
       - pwgen
       - keepassxc
