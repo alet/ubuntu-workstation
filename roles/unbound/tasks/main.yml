@@ -9,6 +9,11 @@
       - unbound
     update_cache: yes
 
+- name: Add server record to hosts
+  lineinfile:
+    name: /etc/hosts
+    line: "192.0.47.9\twww.internic.net"
+
 - name: Install service to update root.hints
   copy:
     dest: /etc/systemd/system/roothints.service
