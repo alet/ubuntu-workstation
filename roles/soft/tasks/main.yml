@@ -135,3 +135,31 @@
     groups: dialout
     append: yes
 
+- name: Prequire for next tasks
+  apt:
+    name: python-psutil
+
+- name: Set Timout of Powersaving on login screen
+  become: yes
+  become_user: gdm
+  become_method: sudo
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type"
+    value: "'blank'"
+
+- name: Set Type of Powersaving on login screen
+  become: yes
+  become_user: gdm
+  become_method: sudo
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-timeout"
+    value: '30'
+
+- name: Set Type of Powersaving on login screen
+  become: yes
+  become_user: gdm
+  become_method: sudo
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/power/lid-close-ac-action"
+    value: "'blank'"
+
