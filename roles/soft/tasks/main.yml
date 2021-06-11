@@ -55,6 +55,7 @@
       - smartmontools
       - tlp
       - tree
+      - locate
       - multitail
       - task-spooler
       - clamav
