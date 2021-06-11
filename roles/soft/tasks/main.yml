@@ -52,6 +52,8 @@
       - virt-manager
       - linssid
       - iperf
+      - smartmontools
+      - tlp
       - tree
       - multitail
       - task-spooler
