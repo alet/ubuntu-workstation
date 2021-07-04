@@ -1,0 +1,21 @@
+---
+
+# Postfix configure and install
+
+- name: Configure Postfix
+  debconf:
+    name: postfix
+    question: 'postfix/main_mailer_type'
+    vtype: 'select'
+    value: 'Local only'
+
+- name: Configure Postfix
+  debconf:
+    name: postfix
+    question: 'postfix/mailname'
+    vtype: 'string'
+    value: "{{ ansible_host }}"
+
+- name: Install Postfix
+  apt:
+    name: postfix
