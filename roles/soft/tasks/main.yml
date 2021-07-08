@@ -48,6 +48,9 @@
       - zathura-pdf-poppler
       - zathura-djvu
       - pdf-presenter-console
+      - qpdf
+      - pdftk
+      - pandoc
       - anki
       - virt-manager
       - linssid
