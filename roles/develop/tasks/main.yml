@@ -6,6 +6,10 @@
   apt:
     name: git-extras
 
+- name: Add libgdiplus, needs for KP
+  apt:
+    name: libgdiplus
+
 - name: Install Key for MS repo
   apt:
     deb: https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
