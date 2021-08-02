@@ -26,10 +26,20 @@
       - virtualbox
     update_cache: yes
 
+- name: Install Vagrant repo key
+  apt_key:
+    url: https://apt.releases.hashicorp.com/gpg
+    state: present
+
+- name: Add Vagrant repo
+  apt_repository:
+    repo: "deb [arch=amd64] https://apt.releases.hashicorp.com {{ ansible_lsb.codename | lower }} main"
+    state: present
+    filename: vagrant
 
 - name: Install Vagrant
   apt:
-    deb: "{{ vagrant_deb }}"
+    name: vagrant
 
 - name: Install iface-up script
   copy:

@@ -4,7 +4,7 @@
 - name: Configure as workstation
   hosts: all
   become: yes
-  gather_facts: false
+  gather_facts: true
   vars:
     - timezone: Europe/Kiev
 
