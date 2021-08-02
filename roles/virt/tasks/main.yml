@@ -26,11 +26,6 @@
       - virtualbox
     update_cache: yes
 
-- name: Disable vbox web
-  systemd:
-    name: vboxweb
-    enabled: no
-    masked: no
 
 - name: Install Vagrant
   apt:
