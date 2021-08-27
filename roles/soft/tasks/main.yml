@@ -11,6 +11,7 @@
     name:
       - dc
       - bc
+      - zsh-doc
       - vim
       - vlc
       - vlc-plugin-bittorrent
