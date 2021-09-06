@@ -134,6 +134,7 @@
 - name: Install youtube-dl
   pip:
     name: youtube-dl
+    state: latest
     extra_args: "--user --compile"
   become: false
 
