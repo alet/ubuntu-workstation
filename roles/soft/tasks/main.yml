@@ -47,6 +47,7 @@
       - sigil
       - okular-extra-backends
       - nomacs
+      - gthumb
       - zathura-pdf-poppler
       - zathura-djvu
       - pdf-presenter-console
