@@ -18,6 +18,7 @@
       - cmus
       - unrar
       - audacious
+      - mp3wrap
       - mercurial
       - handbrake
       - handbrake-cli
