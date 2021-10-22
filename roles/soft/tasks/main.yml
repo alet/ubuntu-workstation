@@ -47,7 +47,7 @@
       - inkscape
       - sigil
       - okular-extra-backends
-      - nomacs
+      - sxiv
       - gthumb
       - zathura-pdf-poppler
       - zathura-djvu
