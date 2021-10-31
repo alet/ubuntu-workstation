@@ -87,6 +87,7 @@
       - winbind
       - xpad
       - xclip
+      - freerdp2-x11
       - mutt
       - gramps
       - tj3
