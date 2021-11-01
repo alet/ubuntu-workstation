@@ -1,4 +1,9 @@
 ---
+- name: Run apt upgrade
+  apt:
+    upgrade: "yes"
+    update_cache: yes
+    cache_valid_time: 432000
 
 - name: Add riot.im repo key
   apt_key:

@@ -26,6 +26,12 @@
       - virtualbox
     update_cache: yes
 
+- name: Run apt upgrade
+  apt:
+    upgrade: "yes"
+    update_cache: yes
+    cache_valid_time: 432000
+
 - name: Install Vagrant repo key
   apt_key:
     url: https://apt.releases.hashicorp.com/gpg
