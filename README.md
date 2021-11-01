@@ -5,9 +5,9 @@ This playbook configure typical workstation on Ubuntu
 If you configure localhost you need install ansible & git before. Ansible should be at least 2.1 so in 16.04 you need install it by pip
 
 ```sh
-sudo apt-get install git ansible
+sudo apt-get install git ansible python3-pip
 ansible-galaxy collection install community.general
-git clone git@github.com:alet/ubuntu-workstation.git
+git clone https://github.com/alet/ubuntu-workstation.git/
 cd ubuntu-workstation
 ansible-playbook --ask-become-pass -c local -i 'SHORT_HOSTNAME,' site.yml
 ```
