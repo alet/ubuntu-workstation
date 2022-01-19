@@ -145,9 +145,9 @@
     extra_args: "--user --compile"
   become: false
 
-- name: Install youtube-dl
+- name: Install fork of youtube-dl
   pip:
-    name: youtube-dl
+    name: yt-dlp
     state: latest
     extra_args: "--user --compile"
   become: false
