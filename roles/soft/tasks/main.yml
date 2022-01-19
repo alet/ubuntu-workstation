@@ -82,6 +82,15 @@
       - libreoffice-calc
       - libreoffice-writer
       - libreoffice-l10n-ru
+      - hunspell-en-us
+      - hunspell-ru
+      - hunspell-uk
+      - mythes-en-us
+      - mythes-ru
+      - mythes-uk
+      - hyphen-en-us
+      - hyphen-ru
+      - hyphen-uk
       - texmaker
       - texstudio
       - winbind
