@@ -131,6 +131,12 @@
     user_install: no
     state: latest
 
+- name: Install Dolphin file manager with mediainfo support
+  apt:
+    name:
+      - dolphin
+      - breeze-icon-theme
+
 - name: Duplicity depends
   apt:
     name:
