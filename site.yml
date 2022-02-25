@@ -11,7 +11,8 @@
   roles:
     - deps
     - unbound
-    - mail
+    - joplin
+#    - mail
     - virt
     - windowmaker
     - fonts
@@ -25,7 +26,7 @@
     - opera
     - vivaldi
     - viber
-    - zoom
+#    - zoom
     - skype
     - riot.im
     - telegram
@@ -33,4 +34,4 @@
     - anydesk
     - games
     - foreign-lang
-    - teamviewer
+#    - teamviewer
