@@ -13,6 +13,7 @@
       - bc
       - zsh-doc
       - vim
+      - nvme-cli
       - vlc
       - vlc-plugin-bittorrent
       - cmus
