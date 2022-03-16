@@ -1,0 +1,11 @@
+---
+# Foliate Install
+
+- name: Add repo
+  apt_repository:
+    repo: 'ppa:apandada1/foliate'
+    state: present
+
+- name: Install Foliate
+  apt:
+    name: foliate
