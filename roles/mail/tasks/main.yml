@@ -7,7 +7,7 @@
     name: postfix
     question: 'postfix/main_mailer_type'
     vtype: 'select'
-    value: 'Local only'
+    value: 'Satellite system'
 
 - name: Configure Postfix
   debconf:
@@ -15,6 +15,60 @@
     question: 'postfix/mailname'
     vtype: 'string'
     value: "{{ ansible_host }}"
+
+- name: Configure Postfix
+  debconf:
+    name: postfix
+    question: 'postfix/relayhost'
+    vtype: 'string'
+    value: ""
+
+- name: Get user name
+  local_action: command whoami
+  register: username
+  become: false
+
+- name: Configure Postfix
+  debconf:
+    name: postfix
+    question: 'postfix/root_address'
+    vtype: 'string'
+    value: "{{ username.stdout }}"
+
+- name: Configure Postfix
+  debconf:
+    name: postfix
+    question: 'postfix/destinations'
+    vtype: 'string'
+    value: "{{ ansible_host }}, localhost.localdomain, localhost"
+
+- name: Configure Postfix
+  debconf:
+    name: postfix
+    question: 'postfix/mynetworks'
+    vtype: 'string'
+    value: "127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128"
+
+- name: Configure Postfix
+  debconf:
+    name: postfix
+    question: 'postfix/mailbox_limit'
+    vtype: 'string'
+    value: "0"
+
+- name: Configure Postfix
+  debconf:
+    name: postfix
+    question: 'postfix/recipient_delim'
+    vtype: 'string'
+    value: "+"
+
+- name: Configure Postfix
+  debconf:
+    name: postfix
+    question: 'postfix/protocols'
+    vtype: 'string'
+    value: "ipv4"
 
 - name: Install Postfix
   apt:

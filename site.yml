@@ -12,7 +12,7 @@
     - deps
     - unbound
     - joplin
-#    - mail
+    - mail
     - virt
     - windowmaker
     - fonts
