@@ -98,11 +98,20 @@
     owner: root
     mode: 0644
 
-- name: Flash
+- name: Flash1
   lineinfile:
     create: yes
     name: /etc/udev/rules.d/39-usbmuxd.rules
     line: 'SUBSYSTEM=="usb", ATTR{idVendor}=="1005", ATTR{idProduct}=="b113", GROUP="disk"'
+    group: root
+    owner: root
+    mode: 0644
+
+- name: Flash2
+  lineinfile:
+    create: yes
+    name: /etc/udev/rules.d/39-usbmuxd.rules
+    line: 'SUBSYSTEM=="usb", ATTR{idVendor}=="8564", ATTR{idProduct}=="1000", GROUP="disk"'
     group: root
     owner: root
     mode: 0644
