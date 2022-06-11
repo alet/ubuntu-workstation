@@ -56,6 +56,7 @@
       - qpdf
       - pdftk
       - pandoc
+      - poppler-utils
       - anki
       - virt-manager
       - linssid
