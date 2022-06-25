@@ -84,6 +84,7 @@
       - libreoffice-calc
       - libreoffice-writer
       - libreoffice-l10n-ru
+      - wukrainian
       - hunspell-en-us
       - hunspell-ru
       - hunspell-uk
