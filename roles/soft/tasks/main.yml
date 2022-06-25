@@ -80,6 +80,7 @@
       - texlive-science
       - texlive-xetex
       - texlive-luatex
+      - texlive-lang-english
       - libreoffice-impress
       - libreoffice-calc
       - libreoffice-writer
@@ -94,8 +95,6 @@
       - hyphen-en-us
       - hyphen-ru
       - hyphen-uk
-      - texmaker
-      - texstudio
       - winbind
       - xpad
       - xclip
