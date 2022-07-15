@@ -112,6 +112,11 @@
       - mtree-netbsd
       - xbacklight
       - quassel
+      - ipmitool
+      - pinfo
+      - texinfo
+      - at
+      - graphicsmagick
     update_cache: yes
 
 - name: Install Spyder3, Python version of Matlab
