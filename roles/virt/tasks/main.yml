@@ -21,6 +21,7 @@
   apt:
     name:
       - qemu-kvm
+      - samba
       - libvirt0
       - libnm-dev
       - virtualbox
