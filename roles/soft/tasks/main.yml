@@ -111,6 +111,7 @@
       - hwb
       - mtree-netbsd
       - xbacklight
+      - quassel
     update_cache: yes
 
 - name: Install Spyder3, Python version of Matlab
