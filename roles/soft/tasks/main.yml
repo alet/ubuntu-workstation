@@ -107,7 +107,6 @@
       - i3
       - zeal
       - powertop
-      - jmtpfs
     update_cache: yes
 
 - name: Install Spyder3, Python version of Matlab

@@ -1,0 +1,9 @@
+---
+# Android MTP utilites install
+
+- name: Android MTP utilites install
+  apt:
+    name:
+        - android-file-transfer
+        - go-mtpfs
+        - jmtpfs
