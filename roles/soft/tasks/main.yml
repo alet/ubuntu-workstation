@@ -180,7 +180,7 @@
   apt:
     name: python-psutil
 
-- name: Set Timout of Powersaving on login screen
+- name: Set Type of Powersaving on login screen
   become: yes
   become_user: gdm
   become_method: sudo
@@ -188,7 +188,7 @@
     key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type"
     value: "'blank'"
 
-- name: Set Type of Powersaving on login screen
+- name: Set Timout of Powersaving on login screen
   become: yes
   become_user: gdm
   become_method: sudo
