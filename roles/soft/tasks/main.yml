@@ -154,6 +154,29 @@
       - dolphin
       - breeze-icon-theme
 
+- name: Install tutors
+  apt:
+    name:
+      - c++-annotations-html
+      - c++-annotations-pdf
+      - coq-doc-html
+      - coq-doc-pdf
+      - cwcp
+      - dvorak7min
+      - fretsonfire
+      - gccintro
+      - gnubg
+      - gtypist
+      - helpman
+      - junior-typing
+      - klavaro
+      - ktouch
+      - python3.8-doc
+      - tipp10
+      - tuxtype
+      - why3-doc-html
+      - why3-doc-pdf
+
 - name: Duplicity depends
   apt:
     name:
