@@ -81,6 +81,8 @@
       - texlive-xetex
       - texlive-luatex
       - texlive-lang-english
+      - hevea
+      - hevea-doc
       - libreoffice-impress
       - libreoffice-calc
       - libreoffice-writer
