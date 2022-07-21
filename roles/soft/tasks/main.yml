@@ -166,14 +166,18 @@
       - fretsonfire
       - gccintro
       - gnubg
-      - junior-typing
       - klavaro
       - ktouch
       - python3.8-doc
       - tipp10
-      - tuxtype
       - why3-doc-html
       - why3-doc-pdf
+
+- name: Install child soft
+  apt:
+    name:
+      - junior-typing
+      - tuxtype
 
 - name: Duplicity depends
   apt:
