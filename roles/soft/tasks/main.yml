@@ -162,6 +162,7 @@
       - coq-doc-html
       - coq-doc-pdf
       - xorg-docs
+      - libpam-doc
       - cwcp
       - dvorak7min
       - fretsonfire
