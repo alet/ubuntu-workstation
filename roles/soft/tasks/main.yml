@@ -161,6 +161,7 @@
       - c++-annotations-pdf
       - coq-doc-html
       - coq-doc-pdf
+      - xorg-docs
       - cwcp
       - dvorak7min
       - fretsonfire
