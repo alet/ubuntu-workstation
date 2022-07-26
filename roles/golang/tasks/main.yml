@@ -1,0 +1,20 @@
+---
+
+- name: Download Go Lang install
+  get_url:
+    url: "{{ golang }}"
+    dest: /tmp/golang.tgz
+
+- name: Install Go Lang
+  become: false
+  command:
+    creates: "~/go"
+    chdir: "~/"
+    cmd: tar -xzf /tmp/golang.tgz
+
+- name: Install Tour
+  become: false
+  shell:
+    creates: ~/go/bin/tour
+    chdir: "~/"
+    cmd: PATH="~/go/bin:$PATH" ~/go/bin/go install golang.org/x/tour@latest
