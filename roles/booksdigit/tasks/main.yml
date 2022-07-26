@@ -1,0 +1,45 @@
+---
+
+# Soft list by article 'Создание_электронной_копии_книги_в_формате_DjVu_в_Linux'  on ru.wikibooks.org
+#
+
+- name: Install soft for books digitizating
+  apt:
+    name:
+      - geeqie
+      - viewnior
+      - djvulibre-bin
+      - tesseract-ocr
+      - tesseract-ocr-rus
+      - tesseract-ocr-ukr
+      - yagf
+      - ocrfeeder
+      - qpdfview
+      - qpdfview-djvu-plugin
+      - qpdfview-translations
+      - djview4
+
+- name: Utils for working with Pdf
+  apt:
+    name:
+      - pdfshuffler
+      - poppler-utils
+      - pdftk
+      - pdfposter
+
+- name: Scan Tailor's repo
+  apt_repository:
+    repo: ppa:alex-p/scantailor
+
+- name: Install ScanTailor
+  apt:
+    name:
+      - scantailor-advanced
+      - scantailor-universal
+
+- name: Script for converting
+  become: false
+  get_url:
+    url: https://raw.githubusercontent.com/ashipunov/img2djvu/master/img2djvu
+    dest: ~/bin/img2djvu
+    mode: 0755
