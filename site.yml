@@ -11,7 +11,7 @@
   roles:
     - deps
     - unbound
-    - joplin
+#    - joplin
     - android
     - booksdigit
     - mail
@@ -28,7 +28,7 @@
 #    - chrome
     - opera
     - vivaldi
-    - viber
+#    - viber
 #    - zoom
     - skype
     - riot.im
