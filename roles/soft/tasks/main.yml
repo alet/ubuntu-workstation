@@ -122,6 +122,8 @@
       - why3
       - why3-coq
       - why3-examples
+      - hugo
+      - zimwriterfs
     update_cache: yes
 
 - name: Install Spyder3, Python version of Matlab
