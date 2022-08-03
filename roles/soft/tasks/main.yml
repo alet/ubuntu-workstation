@@ -48,6 +48,7 @@
       - inkscape
       - sigil
       - okular-extra-backends
+      - yatm
       - sxiv
       - gthumb
       - zathura-pdf-poppler
