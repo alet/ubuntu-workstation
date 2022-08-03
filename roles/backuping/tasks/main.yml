@@ -1,0 +1,15 @@
+---
+
+- name: Add Bareos repo key
+  apt_key:
+    url: https://download.bareos.org/bareos/release/20/xUbuntu_20.04/Release.key
+
+- name: Add Bareos repo
+  apt_repository:
+    repo: deb https://download.bareos.org/bareos/release/20/xUbuntu_20.04 /
+    filename: bareos.list
+    update_cache: true
+
+- name: Install Bareos client
+  apt:
+    name: bareos-client
