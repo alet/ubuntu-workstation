@@ -126,6 +126,12 @@
       - zimwriterfs
     update_cache: yes
 
+- name: Install maps
+  apt:
+    name:
+      - qgis
+      - marble
+
 - name: Install Spyder3, Python version of Matlab
   apt:
     name:
