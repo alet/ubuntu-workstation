@@ -146,6 +146,8 @@
     name:
       - qgis
       - marble
+      - josm
+      - josm-l10n
 
 - name: Install Spyder3, Python version of Matlab
   apt:
