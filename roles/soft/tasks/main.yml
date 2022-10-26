@@ -141,6 +141,13 @@
       - reptyr
       - alien
 
+- name: Install MindMap
+  apt:
+    name:
+      - vym
+      - planfacile
+      - minder
+
 - name: Install maps
   apt:
     name:
