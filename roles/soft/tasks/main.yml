@@ -127,6 +127,20 @@
       - zimwriterfs
     update_cache: yes
 
+- name: Install systemsoft
+  apt:
+    name:
+      - gpart
+      - parted
+      - testdisk
+      - gddrescue # https://habrahabr.ru/post/236977/
+      - safecopy
+      - ddrutility
+      - ddrescueview
+      - rdfind
+      - reptyr
+      - alien
+
 - name: Install maps
   apt:
     name:
