@@ -12,6 +12,7 @@
     - deps
     - unbound
     - backuping
+    - hardware
 #    - joplin
     - android
     - booksdigit
@@ -27,13 +28,13 @@
     - develop
     - textract
 #    - r-studio
-#    - chrome
+    - chrome
     - opera
     - vivaldi
 #    - viber
 #    - zoom
     - skype
-    - riot.im
+#    - riot.im
     - telegram
     - calibre
     - anydesk
