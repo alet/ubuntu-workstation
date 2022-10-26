@@ -10,6 +10,7 @@
       - viewnior
       - djvulibre-bin
       - tesseract-ocr
+      - tesseract-ocr-eng
       - tesseract-ocr-rus
       - tesseract-ocr-ukr
       - yagf
@@ -18,6 +19,9 @@
       - qpdfview-djvu-plugin
       - qpdfview-translations
       - djview4
+      - python3-djvu
+      - python-djvu-doc
+      - gscan2pdf
 
 - name: Utils for working with Pdf
   apt:
