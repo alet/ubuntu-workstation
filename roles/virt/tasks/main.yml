@@ -46,7 +46,9 @@
 
 - name: Install Vagrant
   apt:
-    name: vagrant
+    name:
+      - vagrant
+      - vagrant-mutate
 
 - name: Install iface-up script
   copy:
