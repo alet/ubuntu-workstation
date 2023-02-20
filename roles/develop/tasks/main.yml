@@ -12,15 +12,7 @@
 
 - name: Install Key for MS repo
   apt:
-    deb: https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
-
-#- name: Add repo universe
-#  apt_repository:
-#    repo: "{{ item }}"
-#  with_items:
-#    - 'deb http://archive.ubuntu.com/ubuntu/ bionic universe'
-#    - 'deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe'
-#    - 'deb http://security.ubuntu.com/ubuntu/ bionic-security universe'
+    deb: https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb
 
 - name: Add https transport
   apt:
@@ -32,7 +24,7 @@
 
 - name: Add .NET Core SDK
   apt:
-    name: dotnet-sdk-3.1
+    name: dotnet-sdk-6.0
 
 - name: Perl tools for developing
   apt:
