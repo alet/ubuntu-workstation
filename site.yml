@@ -1,5 +1,6 @@
 ---
 # This playbook configure typical workstation for home
+# vim: ts=2 sts=2 sw=2 et
 
 - name: Configure as workstation
   hosts: all
@@ -15,7 +16,7 @@
     - backuping
     - waydroid
     - hardware
-#    - joplin
+#   - joplin
     - sway
     - android
     - booksdigit
@@ -25,24 +26,24 @@
     - windowmaker
     - fonts
     - foliate
-#    - slavonic
+#   - slavonic
     - soft
     - keepass
     - ticktick
     - recovery
     - develop
     - textract
-#    - r-studio
+#   - r-studio
     - chrome
     - opera
     - vivaldi
-#    - viber
-#    - zoom
+#   - viber
+#   - zoom
     - skype
-#    - riot.im
     - telegram
+#   - riot.im
     - calibre
     - anydesk
     - games
     - foreign-lang
-#    - teamviewer
+#   - teamviewer
