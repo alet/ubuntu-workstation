@@ -43,8 +43,8 @@
 #   - viber
 #   - zoom
     - skype
-    - telegram
 #   - riot.im
+#   - telegram # Installed to .local due to update issue
     - discord
     - calibre
     - anydesk
