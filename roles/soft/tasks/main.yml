@@ -114,7 +114,6 @@
       - vim-tjp
       - ncdu
       - parallel
-      - i3
       - zeal
       - powertop
       - tmux

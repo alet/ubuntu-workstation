@@ -1,0 +1,47 @@
+---
+# Display Manager install
+
+- name: Add Sway
+  apt:
+    name:
+      - sway
+      - swayidle
+      - swaylock
+      - foot
+      - wob
+      - j4-dmenu-desktop
+      - i3status
+      - mako-notifier
+      - grim
+      - slurp
+      - wl-clipboard
+      - ydotool
+      - waypipe
+
+# https://github.com/emersion/mako/issues/257
+- name: Install AppArmor permission to bus (for mako) - 1
+  copy:
+    dest: /etc/apparmor.d/local/fr.emersion.Mako
+    owner: root
+    group: root
+    mode: 0644
+    src: "fr.emersion.Mako"
+  notify: restart apparmor
+
+- name: Install AppArmor permission to bus (for mako) - 2
+  lineinfile:
+    name: /etc/apparmor.d/fr.emersion.Mako
+    regexp: (\s*)#\s*include if exists <local/fr.emersion.Mako>\s*
+    line: \1include if exists <local/fr.emersion.Mako>
+    backrefs: yes
+  notify: restart apparmor
+
+- name: Brightness regulator
+  apt:
+    name: brightnessctl
+
+- name: Add USERNAME to group video
+  user:
+    name: "{{ username }}"
+    groups: video
+    append: yes
