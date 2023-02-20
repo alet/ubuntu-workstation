@@ -212,7 +212,7 @@
       - gnubg
       - klavaro
       - ktouch
-      - python3.8-doc
+      - python3.10-doc
       - tipp10
 
 - name: Install child soft
@@ -236,7 +236,7 @@
 
 - name: Prequire for next tasks
   apt:
-    name: python-psutil
+    name: python3-psutil
 
 - name: Set Type of Powersaving on login screen
   become: yes
