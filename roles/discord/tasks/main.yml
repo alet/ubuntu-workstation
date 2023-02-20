@@ -1,0 +1,11 @@
+---
+
+- name: Check if Discord is installed
+  package_facts:
+    manager: "auto"
+
+
+- name: Discord Install
+  apt:
+    deb: https://dl.discordapp.net/apps/linux/0.0.22/discord-0.0.22.deb
+  when: "'discord' is not in ansible_facts.packages"
