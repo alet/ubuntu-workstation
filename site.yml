@@ -25,6 +25,8 @@
     - foliate
 #    - slavonic
     - soft
+    - keepass
+    - ticktick
     - recovery
     - develop
     - textract

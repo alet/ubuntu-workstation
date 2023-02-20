@@ -1,11 +1,6 @@
 ---
 # Install soft from standart repository
 
-- name: Add KeePassXC repo
-  apt_repository:
-    repo: ppa:phoerious/keepassxc
-
-
 - name: Install VLC, Audacity, Handbrake, Gimp, Blender, Dropbox, Transmission, PWgen, Keepass2, eSpeak, mount.nfs, iperf, tree, clamav, pv
   apt:
     name:
@@ -38,7 +33,6 @@
       - stellarium
       - pwgen
       - secure-delete
-      - keepassxc
       - espeak
       - glmark2
       - firefox
