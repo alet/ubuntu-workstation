@@ -1,0 +1,7 @@
+---
+
+- name: Bluetooth tools Install
+  apt:
+    name:
+      - bluez
+      - bluez-tools
