@@ -1,0 +1,14 @@
+---
+
+- name: Install soft
+  apt:
+    name:
+      - ghdl
+      - ghdl-gcc
+      - ghdl-llvm
+      - iverilog
+      - myhdl-cosimulation
+      - myhdl-doc
+      - python3-myhdl
+      - verilator
+      - xschem
