@@ -34,13 +34,13 @@
   apt:
     deb: "{{ steam_deb }}"
 
-#- name: Add Lutris repo
-#  apt_repository:
-#    repo: ppa:lutris-team/lutris
-#
-#- name: Install Lutris
-#  apt:
-#    name: lutris
+- name: Add Lutris repo
+  apt_repository:
+    repo: ppa:lutris-team/lutris
+
+- name: Install Lutris
+  apt:
+    name: lutris
 
 - name: Install PlayOnLinux
   apt:
