@@ -1,0 +1,18 @@
+---
+# Brave install
+
+- name: Add repo key
+  apt_key:
+    url: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+    state: present
+
+
+- name: Add repo
+  apt_repository:
+    repo: deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main
+    state: present
+    filename: brave-browser
+
+- name: Add Brave
+  apt:
+    name: brave-browser
