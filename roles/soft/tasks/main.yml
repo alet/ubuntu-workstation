@@ -131,6 +131,12 @@
       - zimwriterfs
     update_cache: yes
 
+- name: Make ZSH default
+  user:
+    name: "{{ username }}"
+    shell: /usr/bin/zsh
+  become: false
+
 - name: Install systemsoft
   apt:
     name:
