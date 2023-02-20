@@ -4,6 +4,8 @@ This playbook configure typical workstation on Ubuntu
 
 If you configure localhost you need install ansible & git before. Ansible should be at least 2.1 so in 16.04 you need install it by pip
 
+You may want change default values for example for golang (roles/golang/default/main.yml)
+
 ```sh
 sudo apt-get install git ansible python3-pip
 ansible-galaxy collection install community.general
