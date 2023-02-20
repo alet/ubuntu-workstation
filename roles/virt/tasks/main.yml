@@ -21,6 +21,7 @@
   apt:
     name:
       - qemu-kvm
+      - qemu-system-arm
       - samba
       - libvirt0
       - libnm-dev
