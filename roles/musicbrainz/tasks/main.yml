@@ -1,0 +1,11 @@
+---
+# MusicBrainz Install
+
+- name: Add repo
+  apt_repository:
+    repo: 'ppa:musicbrainz-developers/stable'
+    state: present
+
+- name: Install MusicBrainz
+  apt:
+    name: picard
