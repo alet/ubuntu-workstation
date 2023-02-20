@@ -23,17 +23,12 @@
     vtype: 'string'
     value: ""
 
-- name: Get user name
-  local_action: command whoami
-  register: username
-  become: false
-
 - name: Configure Postfix
   debconf:
     name: postfix
     question: 'postfix/root_address'
     vtype: 'string'
-    value: "{{ username.stdout }}"
+    value: "{{ username }}"
 
 - name: Configure Postfix
   debconf:

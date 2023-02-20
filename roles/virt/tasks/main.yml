@@ -119,20 +119,15 @@
     owner: root
     mode: 0644
 
-- name: Get user name
-  local_action: command whoami
-  register: username
-  become: false
-
 - name: Add USERNAME to group kvm
   user:
-    name: "{{ username.stdout }}"
+    name: "{{ username }}"
     groups: kvm
     append: yes
 
 - name: Add USERNAME to group disk
   user:
-    name: "{{ username.stdout }}"
+    name: "{{ username }}"
     groups: disk
     append: yes
 

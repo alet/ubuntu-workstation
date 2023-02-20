@@ -236,7 +236,7 @@
 
 - name: Add USERNAME to group dialout for EggBot
   user:
-    name: "{{ username.stdout }}"
+    name: "{{ username }}"
     groups: dialout
     append: yes
 
