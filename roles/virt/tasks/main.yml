@@ -144,7 +144,7 @@
   file:
     path: "/etc/qemu"
     state: directory
-    mode: 755
+    mode: 0755
     group: root
     owner: root
 
