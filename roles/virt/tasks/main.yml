@@ -2,13 +2,6 @@
 
 # Install virtualization soft
 
-# Version from repo is not ready in 20.04
-#- name: Install Anbox, android layer
-#  apt:
-#    name:
-#      - anbox
-#      - android-tools-adb
-
 - name: Install bridge-helper permission setupper
   copy:
     dest: "/etc/apt/apt.conf.d/80qemu"
