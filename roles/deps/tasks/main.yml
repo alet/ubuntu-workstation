@@ -5,15 +5,49 @@
     name:
       - ntpdate
       - curl
+      - traceroute
       - bridge-utils
       - nfs-common
       - cifs-utils
       - smbclient
+      - mailutils
       - git
       - alsa-base
       - pulseaudio
       - wpasupplicant
       - rfkill
-      - python-pygame
+      - python3-pygame
+      - doas
       - openssh-server
+      - keychain
+      - sanoid
+      - restic
+      - apt-file
+      - hfsplus
+      - whois
     update_cache: yes
+
+- name: Create Sanoid directory
+  file:
+    path: "/etc/sanoid"
+    state: directory
+    mode: 0755
+    group: root
+    owner: root
+
+- name: Install Sanoid configuration
+  copy:
+    dest: "/etc/sanoid/sanoid.conf"
+    src: "sanoid.conf"
+    group: root
+    owner: root
+    mode: 0644
+
+- name: Install Doas configuration
+  copy:
+    dest: "/etc/doas.conf"
+    src: "doas.conf"
+    group: root
+    owner: root
+    mode: 0644
+
