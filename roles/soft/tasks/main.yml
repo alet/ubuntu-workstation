@@ -35,7 +35,6 @@
       - secure-delete
       - espeak
       - glmark2
-      - firefox
       - w3m
       - thunderbird
       - kcharselect
@@ -114,9 +113,6 @@
       - texinfo
       - at
       - graphicsmagick
-      - why3
-      - why3-coq
-      - why3-examples
       - hugo
       - zimwriterfs
     update_cache: yes
@@ -191,15 +187,12 @@
       - libpam-doc
       - cwcp
       - dvorak7min
-      - fretsonfire
       - gccintro
       - gnubg
       - klavaro
       - ktouch
       - python3.8-doc
       - tipp10
-      - why3-doc-html
-      - why3-doc-pdf
 
 - name: Install child soft
   apt:

@@ -26,7 +26,6 @@
 - name: Utils for working with Pdf
   apt:
     name:
-      - pdfshuffler
       - poppler-utils
       - pdftk
       - pdfposter
