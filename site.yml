@@ -8,7 +8,7 @@
   gather_facts: true
   vars:
     - timezone: Europe/Kiev
-    - username: "{{ ansible_user_id }}"
+    - username: "{{ lookup('env', 'USER') }}"
 
   roles:
     - deps
