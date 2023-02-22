@@ -136,6 +136,19 @@
     shell: /usr/bin/zsh
   become: false
 
+- name: Configure Wireshark
+  debconf:
+    name: wireshark-common
+    question: 'wireshark-common/install-setuid'
+    value: 'true'
+    vtype: 'select'
+
+- name: Add User to group wireshark
+  user:
+    name: "{{ username }}"
+    groups: wireshark
+    append: yes
+
 - name: Install systemsoft
   apt:
     name:
