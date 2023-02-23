@@ -6,7 +6,6 @@
       - ntpdate
       - curl
       - traceroute
-      - bridge-utils
       - nfs-common
       - cifs-utils
       - smbclient
