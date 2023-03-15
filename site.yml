@@ -13,6 +13,7 @@
   roles:
     - deps
     - unbound
+    - lenovo
 #   - backuping
     - waydroid
     - hardware
