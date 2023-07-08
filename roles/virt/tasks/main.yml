@@ -28,13 +28,15 @@
     cache_valid_time: 432000
 
 - name: Install Vagrant repo key
-  apt_key:
+  get_url:
     url: https://apt.releases.hashicorp.com/gpg
-    state: present
+    dest: /etc/apt/keyrings/vagrant.asc
+    mode: '0644'
+    force: true
 
 - name: Add Vagrant repo
   apt_repository:
-    repo: "deb [arch=amd64] https://apt.releases.hashicorp.com {{ ansible_lsb.codename | lower }} main"
+    repo: "deb [signed-by=/etc/apt/keyrings/vagrant.asc] https://apt.releases.hashicorp.com {{ ansible_lsb.codename | lower }} main"
     state: present
     filename: vagrant
 

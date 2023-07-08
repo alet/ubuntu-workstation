@@ -1,15 +1,16 @@
 ---
 # AnyDesk install
 
-- name: Add repo key
-  apt_key:
+- name: Install repo key
+  get_url:
     url: https://keys.anydesk.com/repos/DEB-GPG-KEY
-    state: present
-
+    dest: /etc/apt/keyrings/anydesk.asc
+    mode: '0644'
+    force: true
 
 - name: Add repo
   apt_repository:
-    repo: deb http://deb.anydesk.com/ all main
+    repo: "deb [signed-by=/etc/apt/keyrings/anydesk.asc] http://deb.anydesk.com/ all main"
     state: present
     filename: anydesk
 

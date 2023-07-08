@@ -1,12 +1,15 @@
 ---
 
-- name: Add skype repo key
-  apt_key:
+- name: Install repo key
+  get_url:
     url: https://repo.skype.com/data/SKYPE-GPG-KEY
+    dest: /etc/apt/keyrings/skype.asc
+    mode: '0644'
+    force: true
 
 - name: Add skype repo
   apt_repository:
-    repo: deb [arch=amd64] https://repo.skype.com/deb stable main
+    repo: deb [signed-by=/etc/apt/keyrings/skype.asc arch=amd64] https://repo.skype.com/deb stable main
     filename: skype-stable
 
 - name: Install skype
