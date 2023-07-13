@@ -38,3 +38,28 @@
       - openjdk-11-doc
       - openjdk-11-jdk
       - openjdk-11-jre
+
+- name: Install repo key
+  get_url:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    dest: /etc/apt/keyrings/kubectl.asc
+    mode: '0644'
+    force: true
+
+- name: Add Kubectl repo
+  apt_repository:
+    repo: deb [signed-by=/etc/apt/keyrings/kubectl.asc] https://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+    filename: kubernetes
+
+- name: Add Kubectl, AWS cli
+  apt:
+    name:
+      - kubectl
+      - awscli
+      - jq
+      - python3-boto3
+
+- name: Install awscli session manager plugin
+  apt:
+    deb: "{{ aws_ssm_plugin }}"
