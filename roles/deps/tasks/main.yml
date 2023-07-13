@@ -70,3 +70,16 @@
     owner: root
     mode: 0644
 
+- name: Install Storage mount - copy file
+  copy:
+    dest: "/etc/systemd/system/home-alet-Storage.mount"
+    src: "home-alet-Storage.mount"
+    group: root
+    owner: root
+    mode: 0644
+
+- name: Install Storage mount - enable mount
+  systemd:
+    name: home-alet-Storage.mount
+    state: stopped
+    enabled: false
