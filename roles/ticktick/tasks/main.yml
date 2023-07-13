@@ -6,5 +6,5 @@
 
 - name: TickTick Install
   apt:
-    deb: https://appest-public.s3.amazonaws.com/download/linux/linux_deb_x64/ticktick-1.0.60-amd64.deb
+    deb: "{{ ticktick_deb }}" 
   when: "'ticktick' is not in ansible_facts.packages"
