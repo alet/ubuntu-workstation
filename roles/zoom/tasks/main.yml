@@ -1,5 +1,10 @@
 ---
 
+- name: Check if Zoom is installed
+  package_facts:
+    manager: "auto"
+
 - name: Install Zoom
   apt:
     deb: "{{ zoom_deb }}"
+  when: "'zoom' is not in ansible_facts.packages"
