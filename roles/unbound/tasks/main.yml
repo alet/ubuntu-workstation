@@ -56,9 +56,3 @@
     state: started
     enabled: yes
     name: unbound
-
-- name: Disable systemd-resoved
-  systemd:
-    state: stopped
-    enabled: no
-    name: systemd-resolved
