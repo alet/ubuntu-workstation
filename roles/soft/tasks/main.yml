@@ -37,7 +37,6 @@
       - ctorrent
       - qbittorrent
       - ncdc
-      - wireshark
       - stellarium
       - pwgen
       - secure-delete
@@ -142,6 +141,13 @@
     question: 'wireshark-common/install-setuid'
     value: 'true'
     vtype: 'select'
+
+- name: Install Network Utils (Wireshark & Ko.)
+  apt:
+    name:
+      - wireshark
+      - dsniff
+      - nmap
 
 - name: Add User to group wireshark
   user:
