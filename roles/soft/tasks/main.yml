@@ -43,7 +43,7 @@
       - espeak
       - glmark2
       - w3m
-      - thunderbird
+      - lynx
       - kcharselect
       - inkscape
       - sigil
@@ -71,6 +71,7 @@
       - task-spooler
       - clamav
       - pv
+      - progress
       - xzdec
       - zstd
       - dict
