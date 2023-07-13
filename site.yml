@@ -12,6 +12,7 @@
 
   roles:
     - lenovo
+    - firewall
     - deps
     - unbound
 #   - backuping
