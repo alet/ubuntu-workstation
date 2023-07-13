@@ -11,5 +11,6 @@
   apt:
     # 20.04 Fix
 #    deb: http://ftp.de.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.8_all.deb
-    name: ttf-mscorefonts-installer
+    name:
+      - ttf-mscorefonts-installer
     update_cache: yes
