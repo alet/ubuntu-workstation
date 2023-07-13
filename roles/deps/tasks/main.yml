@@ -23,6 +23,9 @@
       - apt-file
       - hfsplus
       - whois
+      - wev
+      - netdiag
+      - knockd
     update_cache: yes
 
 - name: Repo for correct wpasupplicant
