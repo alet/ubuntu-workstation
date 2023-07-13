@@ -78,7 +78,6 @@
       - dict-freedict-eng-rus
       - texlive-pstricks
       - texlive-lang-cyrillic
-      - texlive-bibtex-extra
       - texlive-publishers
       - texlive-science
       - texlive-xetex
