@@ -55,12 +55,19 @@
     owner: root
     mode: 04755
 
+- name: Configure parameter of bridge
+  lineinfile:
+    path: /usr/lib/systemd/network/99-default.link
+    regexp: ^MACAddressPolicy=persistent$
+    line: MACAddressPolicy=none
+
 - name: Create bridge
   community.general.nmcli:
     conn_name: 'br0'
     ifname: 'br0'
     dhcp_client_id: 'workstation'
     type: 'bridge'
+    stp: false
     state: 'present'
 
 - name: Add network card to bridge
@@ -69,6 +76,8 @@
     master: 'br0'
     ifname: "{{ wired_card }}"
     type: 'bridge-slave'
+    slave_type: 'bridge'
+    hairpin: false
     state: 'present'
 
 - name: HDD
