@@ -1,14 +1,5 @@
 ---
 # Steam install
-- name: Install dependencies
-  apt:
-    name:
-      - libgl1-mesa-dri:i386
-      - libgl1-mesa-glx:i386
-      - libc6:i386
-      - mesa-vulkan-drivers
-      - mesa-vulkan-drivers:i386
-      - libegl1:i386
 
 - name: Accept question
   debconf:
@@ -23,12 +14,6 @@
     question: 'steam/license'
     value: ''
     vtype: 'note'
-
-- name: Install dependencies
-  apt:
-    name:
-      - steam-libs-amd64:amd64
-      - steam-libs-i386:i386
 
 - name: Add Steam
   apt:
