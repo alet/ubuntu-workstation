@@ -1,5 +1,10 @@
 ---
 
+- name: Check if Viber is installed
+  package_facts:
+    manager: "auto"
+
 - name: Install Viber
   apt:
     deb: "{{ viber_deb }}"
+  when: "'viber' is not in ansible_facts.packages"
