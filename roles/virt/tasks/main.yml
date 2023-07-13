@@ -16,6 +16,7 @@
       - qemu-kvm
       - qemu-system-arm
       - samba
+      - dmg2img
       - libvirt0
       - libnm-dev
       - virtualbox
