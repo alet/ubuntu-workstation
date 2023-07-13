@@ -7,5 +7,5 @@
 
 - name: Discord Install
   apt:
-    deb: https://dl.discordapp.net/apps/linux/0.0.22/discord-0.0.22.deb
+    deb: "{{ discord_deb }}"
   when: "'discord' is not in ansible_facts.packages"
