@@ -74,17 +74,13 @@
 - name: Install MUA
   apt:
     name:
-      - claws-mail
-      - claws-mail-dillo-viewer
-      - claws-mail-litehtml-viewer
-      - claws-mail-fancy-plugin
-      - claws-mail-doc
-      - claws-mail-feeds-reader
-      - claws-mail-gdata-plugin
-      - claws-mail-i18n
-      - claws-mail-mailmbox-plugin
-      - claws-mail-multi-notifier
-      - claws-mail-pgpinline
-      - claws-mail-pgpmime
-      - claws-mail-smime-plugin
-      - claws-mail-themes
+      - thunderbird
+      - dovecot-imapd
+
+- name: Configure dovecot
+  lineinfile:
+    path: "/etc/dovecot/dovecot.conf"
+    regexp: '^listen.*'
+    insertafter: '^#listen'
+    line: listen = 127.0.0.1
+  notify: restart dovecot
