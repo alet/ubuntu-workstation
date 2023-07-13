@@ -170,11 +170,7 @@
 
 - name: Install MindMap
   apt:
-    name:
-      - vym
-      - planfacile
-      - minder
-      - freeplane
+    deb: https://kumisystems.dl.sourceforge.net/project/freeplane/freeplane%20stable/freeplane_1.11.4~upstream-1_all.deb
 
 - name: Install maps
   apt:
