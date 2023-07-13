@@ -11,9 +11,9 @@
     - username: "{{ lookup('env', 'USER') }}"
 
   roles:
+    - lenovo
     - deps
     - unbound
-    - lenovo
 #   - backuping
     - waydroid
     - hardware
