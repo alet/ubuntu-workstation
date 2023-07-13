@@ -14,3 +14,10 @@
     name:
       - ttf-mscorefonts-installer
     update_cache: yes
+
+# Needs for layout indicator in 22.04
+- name: Remove Noto Emoji
+  apt:
+    name:
+      - fonts-noto-color-emoji
+    state: 'absent'
