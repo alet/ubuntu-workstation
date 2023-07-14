@@ -1,2 +1,3 @@
 ---
-steam_deb: 'https://steamcdn-a.akamaihd.net/client/installer/steam.deb'
+
+steam_deb: https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
