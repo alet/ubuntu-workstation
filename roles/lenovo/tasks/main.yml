@@ -6,3 +6,10 @@
     regexp: ^GRUB_CMDLINE_LINUX_DEFAULT="(?!.*?(tpm_tis.interrupts=0))(.*)
     line: GRUB_CMDLINE_LINUX_DEFAULT="tpm_tis.interrupts=0 \2
     backrefs: yes
+
+# https://wiki.ubuntu.com/IntelQuickSyncVideo
+- name: Install Video drivers
+  apt:
+    name:
+      - ubuntu-restricted-addons
+      - vainfo
