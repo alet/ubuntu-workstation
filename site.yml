@@ -27,7 +27,6 @@
     - mail
     - virt
     - windowmaker
-    - fonts
     - foliate
 #   - slavonic
     - soft
@@ -46,6 +45,7 @@
 #   - viber
 #   - zoom
     - skype
+    - fonts
 #   - riot.im
 #   - telegram # Installed to .local due to update issue
     - discord
