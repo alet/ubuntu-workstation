@@ -2,14 +2,16 @@
 # Opera install
 
 - name: Add repo key
-  apt_key:
+  get_url:
     url: https://deb.opera.com/archive.key
-    state: present
+    dest: /etc/apt/keyrings/opera.asc
+    mode: '0644'
+    force: true
 
 
 - name: Add repo
   apt_repository:
-    repo: deb https://deb.opera.com/opera-stable/ stable non-free
+    repo: deb [signed-by=/etc/apt/keyrings/opera.asc] https://deb.opera.com/opera-stable/ stable non-free
     state: present
     filename: opera-stable
 
