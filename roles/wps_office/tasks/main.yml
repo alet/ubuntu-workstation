@@ -8,3 +8,8 @@
   apt:
     deb: https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11691/wps-office_11.1.0.11691.XA_amd64.deb
   when: "'wps-office' is not in ansible_facts.packages"
+
+- name: Remove templates
+  ansible.builtin.file:
+    path: /etc/skel/模板
+    state: absent
