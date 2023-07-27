@@ -180,6 +180,11 @@
       - josm
       - josm-l10n
 
+- name: Install soft for studying
+  apt:
+    name:
+      - scilab
+
 - name: Install Spyder3, Python version of Matlab
   apt:
     name:
