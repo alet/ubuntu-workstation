@@ -50,7 +50,7 @@
 #   - telegram # Installed to .local due to update issue
     - discord
     - calibre
-    - anydesk
+#   - anydesk
     - games
     - foreign-lang
 #   - teamviewer
