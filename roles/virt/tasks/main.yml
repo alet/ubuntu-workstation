@@ -41,11 +41,12 @@
     state: present
     filename: vagrant
 
-- name: Install Vagrant
+- name: Install Vagrant & Terraform
   apt:
     name:
       - vagrant
       - vagrant-mutate
+      - terraform
 
 - name: Install iface-up script
   copy:
