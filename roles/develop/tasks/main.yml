@@ -39,7 +39,7 @@
       - openjdk-11-jdk
       - openjdk-11-jre
 
-- name: Install repo key
+- name: Install Kuber repo key
   get_url:
     url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
     dest: /etc/apt/keyrings/kubectl.asc
