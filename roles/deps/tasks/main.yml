@@ -84,6 +84,30 @@
     state: stopped
     enabled: false
 
+- name: Install WiFi profiles - 1
+  copy:
+    dest: "/etc/NetworkManager/system-connections/Alet.nmconnection"
+    src: "Alet.nmconnection"
+    group: root
+    owner: root
+    mode: 0600
+
+- name: Install WiFi profiles - 2
+  copy:
+    dest: "/etc/NetworkManager/system-connections/Alet'sHome.nmconnection"
+    src: "Alet'sHome.nmconnection"
+    group: root
+    owner: root
+    mode: 0600
+
+- name: Install WiFi profiles - 3
+  copy:
+    dest: "/etc/NetworkManager/system-connections/Alet's Home.nmconnection"
+    src: "Alet's Home.nmconnection"
+    group: root
+    owner: root
+    mode: 0600
+
 - name: Install NFS server
   apt:
     name: nfs-kernel-server
