@@ -108,6 +108,22 @@
     owner: root
     mode: 0600
 
+- name: Create log file - 1
+  file:
+    path: "/var/log/backup.home.aws.log"
+    state: touch
+    mode: 0644
+    owner: alet
+    group: root
+
+- name: Create log file - 2
+  file:
+    path: "/var/log/backup.home.khai.log"
+    state: touch
+    mode: 0644
+    owner: alet
+    group: root
+
 - name: Install NFS server
   apt:
     name: nfs-kernel-server
