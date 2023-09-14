@@ -8,8 +8,14 @@
     backrefs: yes
 
 # https://wiki.ubuntu.com/IntelQuickSyncVideo
-- name: Install Video drivers
+- name: Install Video drivers & hardware utils
   apt:
     name:
       - ubuntu-restricted-addons
       - vainfo
+      - tlp
+
+- name: Set bounds for laptop battery
+  command:
+    cmd: /usr/sbin/tlp setcharge 70 80 BAT0
+

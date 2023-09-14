@@ -64,7 +64,6 @@
       - neofetch
       - iperf
       - smartmontools
-      - tlp
       - tree
       - locate
       - multitail
