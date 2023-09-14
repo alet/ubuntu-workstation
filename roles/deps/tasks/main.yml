@@ -124,6 +124,20 @@
     owner: alet
     group: root
 
+- name: Create crontab
+  copy:
+    src: alet.crontab
+    dest: "{{ lookup('env', 'HOME') }}/crontab"
+  register: crontab_result
+  become: false
+
+- name: Install crontab
+  shell: crontab crontab
+  args:
+    chdir: "{{ lookup('env', 'HOME') }}"
+  when: crontab_result.changed
+  become: false
+
 - name: Install NFS server
   apt:
     name: nfs-kernel-server
