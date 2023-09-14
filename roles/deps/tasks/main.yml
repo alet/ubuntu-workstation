@@ -83,3 +83,20 @@
     name: home-alet-Storage.mount
     state: stopped
     enabled: false
+
+- name: Install NFS server
+  apt:
+    name: nfs-kernel-server
+
+- name: Create folder for server's backups
+  file:
+    path: "/var/backups/server"
+    state: directory
+    mode: 0700
+    group: backup
+    owner: backup
+
+- name: Add share for server backups
+  lineinfile:
+    path: /etc/exports
+    line: "/var/backups/server\t192.168.1.2(rw,no_subtree_check,anonuid=34)"
