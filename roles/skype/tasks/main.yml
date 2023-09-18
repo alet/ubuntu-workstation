@@ -9,7 +9,7 @@
 
 - name: Add skype repo
   apt_repository:
-    repo: deb [signed-by=/etc/apt/keyrings/skype.asc arch=amd64] https://repo.skype.com/deb stable main
+    repo: deb [arch=amd64] https://repo.skype.com/deb stable main
     filename: skype-stable
 
 - name: Install skype
