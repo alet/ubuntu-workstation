@@ -6,6 +6,7 @@
     name:
       - dc
       - bc
+      - exuberant-ctags
       - gpg
       - remind
       - libnotify-bin
