@@ -30,3 +30,9 @@
 - name: Install PlayOnLinux
   apt:
     name: playonlinux
+
+- name: Install games from official repo
+  apt:
+    name:
+      - angband
+      - zangband
