@@ -67,6 +67,7 @@
     conn_name: 'br0'
     ifname: 'br0'
     dhcp_client_id: 'workstation'
+    dns4_search: 'local'
     type: 'bridge'
     stp: false
     state: 'present'
