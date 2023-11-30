@@ -49,10 +49,34 @@
     group: root
     mode: 0644
     src: "main.conf"
-    
 
 - name: Enable and run unbound
   systemd:
     state: started
     enabled: yes
     name: unbound
+
+- name: Add local resourses - cinema
+  lineinfile:
+    name: /etc/hosts
+    line: "192.168.1.2\tcinema.galato.pp.ua\tcinema"
+
+- name: Add local resourses - mature
+  lineinfile:
+    name: /etc/hosts
+    line: "192.168.1.2\tmature.galato.pp.ua\tmature"
+
+- name: Add local resourses - encycl
+  lineinfile:
+    name: /etc/hosts
+    line: "192.168.1.2\tencycl.galato.pp.ua\tencycl"
+
+- name: Add local resourses - munin
+  lineinfile:
+    name: /etc/hosts
+    line: "192.168.1.2\tmunin.galato.pp.ua\tmunin"
+
+- name: Add local resourses - mail
+  lineinfile:
+    name: /etc/hosts
+    line: "192.168.1.2\tmail.galato.pp.ua\tmail"
