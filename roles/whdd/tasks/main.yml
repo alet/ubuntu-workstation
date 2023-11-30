@@ -1,0 +1,11 @@
+---
+
+- name: Add WHDD repo
+  ansible.builtin.apt_repository:
+    repo: deb https://ppa.launchpadcontent.net/whdd/stable/ubuntu groovy main
+    state: present
+    filename: whdd
+
+- name: Install WHDD
+  apt:
+    name: whdd
