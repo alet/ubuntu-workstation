@@ -73,8 +73,18 @@
 
 - name: Install MUA
   apt:
+    allow_downgrade: yes
     name:
-      - thunderbird
+      - thunderbird=1:91.8.0+build2-0ubuntu1
+
+- name: Freeze correct Thunderbird
+  dpkg_selections:
+    name: thunderbird
+    selection: hold
+
+- name: Install local mail
+  apt:
+    name:
       - dovecot-imapd
 
 - name: Configure dovecot
