@@ -1,0 +1,9 @@
+---
+
+profile: production
+
+exclude_paths:
+  - roles/firewall
+  - roles/users
+
+offline: false
