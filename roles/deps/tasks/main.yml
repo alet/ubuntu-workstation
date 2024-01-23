@@ -123,34 +123,3 @@
     mode: 0644
     owner: alet
     group: root
-
-- name: Create crontab
-  copy:
-    src: alet.crontab
-    dest: "{{ lookup('env', 'HOME') }}/crontab"
-  register: crontab_result
-  become: false
-
-- name: Install crontab
-  shell: crontab crontab
-  args:
-    chdir: "{{ lookup('env', 'HOME') }}"
-  when: crontab_result.changed
-  become: false
-
-- name: Install NFS server
-  apt:
-    name: nfs-kernel-server
-
-- name: Create folder for server's backups
-  file:
-    path: "/var/backups/server"
-    state: directory
-    mode: 0700
-    group: backup
-    owner: backup
-
-- name: Add share for server backups
-  lineinfile:
-    path: /etc/exports
-    line: "/var/backups/server\t192.168.1.2(rw,no_subtree_check,anonuid=34)"
