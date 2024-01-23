@@ -282,3 +282,12 @@
     key: "/org/gnome/settings-daemon/plugins/power/lid-close-ac-action"
     value: "'blank'"
 
+- name: Add Neovim repo
+  ansible.builtin.apt_repository:
+    repo: deb https://ppa.launchpadcontent.net/neovim-ppa/stable/ubuntu jammy main
+    state: present
+    filename: neovim
+
+- name: Install Neovim
+  apt:
+    name: neovim
