@@ -5,6 +5,6 @@ profile: production
 exclude_paths:
   - roles/firewall
   - roles/users
-  - roles/backuping
+  - roles/backup
 
 offline: false

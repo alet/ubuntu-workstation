@@ -15,7 +15,7 @@
     - firewall
     - deps
     - unbound
-#   - backuping
+    - backup
     - waydroid
     - hardware
 #   - joplin
