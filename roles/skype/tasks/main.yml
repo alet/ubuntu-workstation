@@ -1,16 +1,16 @@
 ---
 
-- name: Install repo key
-  get_url:
-    url: https://repo.skype.com/data/SKYPE-GPG-KEY
-    dest: /etc/apt/keyrings/skype.asc
-    mode: '0644'
-    force: true
+- name: Add Skype repo
+  block:
+    - name: Add key
+      ansible.builtin.get_url:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x1F3045A5DF7587C3
+        dest: /etc/apt/keyrings/skype.asc
 
-- name: Add skype repo
-  apt_repository:
-    repo: deb [arch=amd64] https://repo.skype.com/deb stable main
-    filename: skype-stable
+    - name: Add repo
+      ansible.builtin.apt_repository:
+        repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/skype.asc] https://repo.skype.com/deb stable main"
+        state: present
 
 - name: Install skype
   apt:
