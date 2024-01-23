@@ -142,7 +142,7 @@
     value: 'true'
     vtype: 'select'
 
-- name: Install Network Utils (Wireshark & Ko.)
+- name: Install Network Utils (Wireshark & Co.)
   apt:
     name:
       - wireshark
