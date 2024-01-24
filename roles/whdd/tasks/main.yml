@@ -1,10 +1,22 @@
 ---
 
 - name: Add WHDD repo
-  ansible.builtin.apt_repository:
-    repo: deb https://ppa.launchpadcontent.net/whdd/stable/ubuntu groovy main
-    state: present
-    filename: whdd
+  block:
+    - name: Repo key
+      ansible.builtin.get_url:
+        url: >-
+          https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x89D4E6220B3A93E7
+        dest: /etc/apt/keyrings/whdd.asc
+        mode: '0644'
+        force: true
+
+    - name: Repo file
+      ansible.builtin.apt_repository:
+        repo: >-
+          deb [arch=amd64 signed-by=/etc/apt/keyrings/whdd.asc]
+          https://ppa.launchpadcontent.net/whdd/stable/ubuntu groovy main
+        state: present
+        filename: whdd
 
 - name: Install WHDD
   ansible.builtin.apt:
