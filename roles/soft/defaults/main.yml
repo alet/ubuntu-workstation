@@ -1,3 +1,4 @@
 ---
 
-freeplane_url: https://sourceforge.net/projects/freeplane/files/freeplane%20stable/freeplane_1.11.8~upstream-1_all.deb/download
+freeplane_url: >
+  https://netix.dl.sourceforge.net/project/freeplane/freeplane%20stable/freeplane_1.11.10~upstream-1_all.deb
