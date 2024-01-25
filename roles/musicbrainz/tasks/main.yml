@@ -1,10 +1,24 @@
 ---
 # MusicBrainz Install
 
-- name: Add repo
-  ansible.builtin.apt_repository:
-    repo: 'ppa:musicbrainz-developers/stable'
-    state: present
+- name: Add MusicBrainz repo
+  block:
+    - name: Repo key
+      ansible.builtin.get_url:
+        url: >-
+          https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x0CC3AFF5CEDF0F40
+        dest: /etc/apt/keyrings/musicb.asc
+        mode: '0644'
+        force: true
+
+    - name: Repo file
+      ansible.builtin.apt_repository:
+        repo: >-
+          deb [arch=amd64 signed-by=/etc/apt/keyrings/musicb.asc]
+          https://ppa.launchpadcontent.net/musicbrainz-developers/stable/ubuntu
+          jammy main
+        state: present
+        filename: musicb
 
 - name: Install MusicBrainz
   ansible.builtin.apt:
