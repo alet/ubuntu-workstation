@@ -1,10 +1,11 @@
 ---
 
-# Soft list by article 'Создание_электронной_копии_книги_в_формате_DjVu_в_Linux'  on ru.wikibooks.org
+# Soft list by article 'Создание_электронной_копии_книги_в_формате_DjVu_в_Linux'
+# on ru.wikibooks.org
 #
 
 - name: Install soft for books digitizating
-  apt:
+  ansible.builtin.apt:
     name:
       - geeqie
       - viewnior
@@ -24,25 +25,25 @@
       - gscan2pdf
 
 - name: Utils for working with Pdf
-  apt:
+  ansible.builtin.apt:
     name:
       - poppler-utils
       - pdftk
       - pdfposter
 
 - name: Scan Tailor's repo
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: ppa:alex-p/scantailor
 
 - name: Install ScanTailor
-  apt:
+  ansible.builtin.apt:
     name:
       - scantailor-advanced
       - scantailor-universal
 
 - name: Script for converting
   become: false
-  get_url:
+  ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/ashipunov/img2djvu/master/img2djvu
     dest: ~/bin/img2djvu
-    mode: 0755
+    mode: '0755'

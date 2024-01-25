@@ -1,2 +1,4 @@
 ---
-teamviewer_deb: 'https://download.teamviewer.com/download/linux/teamviewer_amd64.deb'
+
+teamviewer_deb: >
+  https://download.teamviewer.com/download/linux/teamviewer_amd64.deb

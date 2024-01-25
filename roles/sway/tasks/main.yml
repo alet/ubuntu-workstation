@@ -2,7 +2,7 @@
 # Display Manager install
 
 - name: Add Sway
-  apt:
+  ansible.builtin.apt:
     name:
       - sway
       - swayidle
@@ -20,28 +20,28 @@
 
 # https://github.com/emersion/mako/issues/257
 - name: Install AppArmor permission to bus (for mako) - 1
-  copy:
+  ansible.builtin.copy:
     dest: /etc/apparmor.d/local/fr.emersion.Mako
     owner: root
     group: root
-    mode: 0644
+    mode: '0644'
     src: "fr.emersion.Mako"
-  notify: restart apparmor
+  notify: Restart apparmor
 
 - name: Install AppArmor permission to bus (for mako) - 2
-  lineinfile:
+  ansible.builtin.lineinfile:
     name: /etc/apparmor.d/fr.emersion.Mako
     regexp: (\s*)#\s*include if exists <local/fr.emersion.Mako>\s*
     line: \1include if exists <local/fr.emersion.Mako>
-    backrefs: yes
-  notify: restart apparmor
+    backrefs: true
+  notify: Restart apparmor
 
 - name: Brightness regulator
-  apt:
+  ansible.builtin.apt:
     name: brightnessctl
 
 - name: Add USERNAME to group video
-  user:
+  ansible.builtin.user:
     name: "{{ username }}"
     groups: video
-    append: yes
+    append: true

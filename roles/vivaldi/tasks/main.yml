@@ -2,23 +2,23 @@
 # Vivaldi install
 
 - name: Run apt upgrade
-  apt:
-    upgrade: "yes"
-    update_cache: yes
+  ansible.builtin.apt:
+    upgrade: true
+    update_cache: true
     cache_valid_time: 432000
 
 - name: Add repo key
-  apt_key:
+  ansible.builtin.apt_key:
     url: https://repo.vivaldi.com/archive/linux_signing_key.pub
     state: present
 
 
 - name: Add repo
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: deb [arch=amd64] https://repo.vivaldi.com/archive/deb/ stable main
     state: present
     filename: vivaldi-stable
 
 - name: Add Vivaldi
-  apt:
+  ansible.builtin.apt:
     name: vivaldi-stable

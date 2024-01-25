@@ -2,18 +2,19 @@
 # AnyDesk install
 
 - name: Install repo key
-  get_url:
+  ansible.builtin.get_url:
     url: https://keys.anydesk.com/repos/DEB-GPG-KEY
     dest: /etc/apt/keyrings/anydesk.asc
     mode: '0644'
     force: true
 
 - name: Add repo
-  apt_repository:
-    repo: "deb [signed-by=/etc/apt/keyrings/anydesk.asc] http://deb.anydesk.com/ all main"
+  ansible.builtin.apt_repository:
+    repo: "deb [signed-by=/etc/apt/keyrings/anydesk.asc] \
+      http://deb.anydesk.com/ all main"
     state: present
     filename: anydesk
 
 - name: Add Anydesk
-  apt:
+  ansible.builtin.apt:
     name: anydesk

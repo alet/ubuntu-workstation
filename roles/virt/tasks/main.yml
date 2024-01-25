@@ -3,15 +3,15 @@
 # Install virtualization soft
 
 - name: Install bridge-helper permission setupper
-  copy:
+  ansible.builtin.copy:
     dest: "/etc/apt/apt.conf.d/80qemu"
     src: "80qemu"
     group: root
     owner: root
-    mode: 0644
+    mode: '0644'
 
 - name: Install dependencies
-  apt:
+  ansible.builtin.apt:
     name:
       - qemu-kvm
       - qemu-system-arm
@@ -20,44 +20,46 @@
       - libvirt0
       - libnm-dev
       - virtualbox
-    update_cache: yes
+    update_cache: true
 
 - name: Run apt upgrade
-  apt:
+  ansible.builtin.apt:
     upgrade: "yes"
-    update_cache: yes
+    update_cache: true
     cache_valid_time: 432000
 
 - name: Install Vagrant repo key
-  get_url:
+  ansible.builtin.get_url:
     url: https://apt.releases.hashicorp.com/gpg
     dest: /etc/apt/keyrings/vagrant.asc
     mode: '0644'
     force: true
 
 - name: Add Vagrant repo
-  apt_repository:
-    repo: "deb [signed-by=/etc/apt/keyrings/vagrant.asc] https://apt.releases.hashicorp.com {{ ansible_lsb.codename | lower }} main"
+  ansible.builtin.apt_repository:
+    repo: "deb [signed-by=/etc/apt/keyrings/vagrant.asc] \
+           https://apt.releases.hashicorp.com \
+           {{ ansible_lsb.codename | lower }} main"
     state: present
     filename: vagrant
 
 - name: Install Vagrant & Terraform
-  apt:
+  ansible.builtin.apt:
     name:
       - vagrant
       - vagrant-mutate
       - terraform
 
 - name: Install iface-up script
-  copy:
+  ansible.builtin.copy:
     dest: "/etc/qemu-ifup"
     src: "qemu-ifup"
     group: root
     owner: root
-    mode: 04755
+    mode: '04755'
 
 - name: Configure parameter of bridge
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: /usr/lib/systemd/network/99-default.link
     regexp: ^MACAddressPolicy=persistent$
     line: MACAddressPolicy=none
@@ -74,97 +76,107 @@
 
 - name: Add network card to bridge
   community.general.nmcli:
-    conn_name: "{{ wired_card }}"
+    conn_name: "{{ virt_wired_card }}"
     master: 'br0'
-    ifname: "{{ wired_card }}"
+    ifname: "{{ virt_wired_card }}"
     type: 'bridge-slave'
     slave_type: 'bridge'
     hairpin: false
     state: 'present'
 
 - name: HDD
-  lineinfile:
-    create: yes
+  ansible.builtin.lineinfile:
+    create: true
     name: /etc/udev/rules.d/39-usbmuxd.rules
-    line: 'SUBSYSTEM=="usb", ATTR{idVendor}=="152d", ATTR{idProduct}=="2336", GROUP="disk"'
+    line: >-
+      SUBSYSTEM=="usb", ATTR{idVendor}=="152d",
+      ATTR{idProduct}=="2336", GROUP="disk"
     group: root
     owner: root
-    mode: 0644
+    mode: '0644'
 
 - name: Old DevID
-  lineinfile:
-    create: yes
+  ansible.builtin.lineinfile:
+    create: true
     name: /etc/udev/rules.d/39-usbmuxd.rules
-    line: 'SUBSYSTEM=="usb", ATTR{idVendor}=="05ac", ATTR{idProduct}=="1281", GROUP="disk"'
+    line: >-
+      SUBSYSTEM=="usb", ATTR{idVendor}=="05ac",
+      ATTR{idProduct}=="1281", GROUP="disk"
     group: root
     owner: root
-    mode: 0644
+    mode: '0644'
 
 - name: New DevID
-  lineinfile:
-    create: yes
+  ansible.builtin.lineinfile:
+    create: true
     name: /etc/udev/rules.d/39-usbmuxd.rules
-    line: 'SUBSYSTEM=="usb", ATTR{idVendor}=="05ac", ATTR{idProduct}=="12a2", GROUP="disk"'
+    line: >-
+      SUBSYSTEM=="usb", ATTR{idVendor}=="05ac",
+      ATTR{idProduct}=="12a2", GROUP="disk"
     group: root
     owner: root
-    mode: 0644
+    mode: '0644'
 
 - name: Flash1
-  lineinfile:
-    create: yes
+  ansible.builtin.lineinfile:
+    create: true
     name: /etc/udev/rules.d/39-usbmuxd.rules
-    line: 'SUBSYSTEM=="usb", ATTR{idVendor}=="1005", ATTR{idProduct}=="b113", GROUP="disk"'
+    line: >-
+      SUBSYSTEM=="usb", ATTR{idVendor}=="1005",
+      ATTR{idProduct}=="b113", GROUP="disk"
     group: root
     owner: root
-    mode: 0644
+    mode: '0644'
 
 - name: Flash2
-  lineinfile:
-    create: yes
+  ansible.builtin.lineinfile:
+    create: true
     name: /etc/udev/rules.d/39-usbmuxd.rules
-    line: 'SUBSYSTEM=="usb", ATTR{idVendor}=="8564", ATTR{idProduct}=="1000", GROUP="disk"'
+    line: >-
+      SUBSYSTEM=="usb", ATTR{idVendor}=="8564",
+      ATTR{idProduct}=="1000", GROUP="disk"
     group: root
     owner: root
-    mode: 0644
+    mode: '0644'
 
 - name: Add USERNAME to group kvm
-  user:
+  ansible.builtin.user:
     name: "{{ username }}"
     groups: kvm
-    append: yes
+    append: true
 
 - name: Add USERNAME to group disk
-  user:
+  ansible.builtin.user:
     name: "{{ username }}"
     groups: disk
-    append: yes
+    append: true
 
 - name: Install permanent kvm options
-  copy:
+  ansible.builtin.copy:
     dest: "/etc/modprobe.d/kvm.conf"
     src: "kvm.conf"
     group: root
     owner: root
-    mode: 0644
+    mode: '0644'
 
 - name: Create qemu directory
-  file:
+  ansible.builtin.file:
     path: "/etc/qemu"
     state: directory
-    mode: 0755
+    mode: '0755'
     group: root
     owner: root
 
 - name: Install bridge permission
-  copy:
+  ansible.builtin.copy:
     dest: "/etc/qemu/bridge.conf"
     src: "bridge.conf"
     group: root
     owner: root
-    mode: 0644
+    mode: '0644'
 
 - name: Add libvirt-qemu to group disk
-  user:
+  ansible.builtin.user:
     name: libvirt-qemu
     groups: disk
-    append: yes
+    append: true

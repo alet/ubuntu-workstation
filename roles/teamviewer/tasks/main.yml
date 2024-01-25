@@ -1,5 +1,5 @@
 ---
 
 - name: Install Teamviewer
-  apt:
+  ansible.builtin.apt:
     deb: "{{ teamviewer_deb }}"

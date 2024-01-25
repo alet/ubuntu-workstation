@@ -1,7 +1,7 @@
 ---
 
 - name: Install dependencies
-  apt:
+  ansible.builtin.apt:
     name:
       - ntpdate
       - curl
@@ -26,100 +26,101 @@
       - wev
       - netdiag
       - knockd
-    update_cache: yes
+    update_cache: true
 
 - name: Repo for correct wpasupplicant
-  apt_repository:
-    repo: deb http://old-releases.ubuntu.com/ubuntu/ impish main restricted universe multiverse
+  ansible.builtin.apt_repository:
+    repo: "deb http://old-releases.ubuntu.com/ubuntu/ impish \
+           main restricted universe multiverse"
     state: present
     filename: oldversion
 
 - name: Install correct wpasupplicant
-  apt:
-    allow_downgrade: yes
+  ansible.builtin.apt:
+    allow_downgrade: true
     name:
       - wpasupplicant=2:2.9.0-21build1
 
 - name: Freeze correct wpasupplicant
-  dpkg_selections:
+  ansible.builtin.dpkg_selections:
     name: wpasupplicant
     selection: hold
 
 
 - name: Create Sanoid directory
-  file:
+  ansible.builtin.file:
     path: "/etc/sanoid"
     state: directory
-    mode: 0755
+    mode: '0755'
     group: root
     owner: root
 
 - name: Install Sanoid configuration
-  copy:
+  ansible.builtin.copy:
     dest: "/etc/sanoid/sanoid.conf"
     src: "sanoid.conf"
     group: root
     owner: root
-    mode: 0644
+    mode: '0644'
 
 - name: Install Doas configuration
-  copy:
+  ansible.builtin.copy:
     dest: "/etc/doas.conf"
     src: "doas.conf"
     group: root
     owner: root
-    mode: 0644
+    mode: '0644'
 
 - name: Install Storage mount - copy file
-  copy:
+  ansible.builtin.copy:
     dest: "/etc/systemd/system/home-alet-Storage.mount"
     src: "home-alet-Storage.mount"
     group: root
     owner: root
-    mode: 0644
+    mode: '0644'
 
 - name: Install Storage mount - enable mount
-  systemd:
+  ansible.builtin.systemd:
     name: home-alet-Storage.mount
     state: stopped
     enabled: false
 
 - name: Install WiFi profiles - 1
-  copy:
+  ansible.builtin.copy:
     dest: "/etc/NetworkManager/system-connections/Alet.nmconnection"
     src: "Alet.nmconnection"
     group: root
     owner: root
-    mode: 0600
+    mode: '0600'
 
 - name: Install WiFi profiles - 2
-  copy:
+  ansible.builtin.copy:
     dest: "/etc/NetworkManager/system-connections/Alet'sHome.nmconnection"
     src: "Alet'sHome.nmconnection"
     group: root
     owner: root
-    mode: 0600
+    mode: '0600'
 
 - name: Install WiFi profiles - 3
-  copy:
+  ansible.builtin.copy:
     dest: "/etc/NetworkManager/system-connections/Alet's Home.nmconnection"
     src: "Alet's Home.nmconnection"
     group: root
     owner: root
-    mode: 0600
+    mode: '0600'
 
 - name: Create log file - 1
-  file:
+  ansible.builtin.file:
     path: "/var/log/backup.home.aws.log"
     state: touch
-    mode: 0644
+    mode: '0644'
     owner: alet
     group: root
 
 - name: Create log file - 2
-  file:
+  ansible.builtin.file:
     path: "/var/log/backup.home.khai.log"
     state: touch
-    mode: 0644
+    mode: '0644'
     owner: alet
     group: root

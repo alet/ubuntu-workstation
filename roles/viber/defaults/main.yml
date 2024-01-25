@@ -1,2 +1,4 @@
 ---
-viber_deb: 'https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb'
+
+viber_deb: >
+  https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb

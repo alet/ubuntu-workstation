@@ -1,7 +1,7 @@
 ---
 
 - name: Check if WPS Office is installed
-  package_facts:
+  ansible.builtin.package_facts:
     manager: "auto"
 
 - name: WPS Office Install

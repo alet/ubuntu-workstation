@@ -1,10 +1,10 @@
 ---
 
 - name: Check if TickTick is installed
-  package_facts:
+  ansible.builtin.package_facts:
     manager: "auto"
 
 - name: TickTick Install
-  apt:
-    deb: "{{ ticktick_deb }}" 
+  ansible.builtin.apt:
+    deb: "{{ ticktick_deb }}"
   when: "'ticktick' is not in ansible_facts.packages"

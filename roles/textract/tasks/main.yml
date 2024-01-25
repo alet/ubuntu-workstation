@@ -1,7 +1,7 @@
 ---
 
 - name: Install deps
-  apt:
+  ansible.builtin.apt:
     name:
       - libpulse-dev
       - python3-dev
@@ -23,7 +23,7 @@
       - liblingua-stem-snowball-perl
 
 - name: Install textract
-  pip:
+  become: false
+  ansible.builtin.pip:
     name: textract
     extra_args: "--user --compile"
-  become: false

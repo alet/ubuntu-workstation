@@ -7,5 +7,5 @@
     filename: whdd
 
 - name: Install WHDD
-  apt:
+  ansible.builtin.apt:
     name: whdd

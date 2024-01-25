@@ -1,8 +1,8 @@
 ---
 # Install soft from standart repository
 
-- name: Install VLC, Audacity, Handbrake, Gimp, Blender, Dropbox, Transmission, PWgen, Keepass2, eSpeak, mount.nfs, iperf, tree, clamav, pv
-  apt:
+- name: Install soft which doesn't need tuning
+  ansible.builtin.apt:
     name:
       - dc
       - bc
@@ -129,40 +129,40 @@
       - hugo
       - zimwriterfs
       - keepassxc
-    update_cache: yes
+    update_cache: true
 
 - name: Make ZSH default
-  user:
+  ansible.builtin.user:
     name: "{{ username }}"
     shell: /usr/bin/zsh
 
 - name: Configure Wireshark
-  debconf:
+  ansible.builtin.debconf:
     name: wireshark-common
     question: 'wireshark-common/install-setuid'
     value: 'true'
     vtype: 'select'
 
 - name: Install Network Utils (Wireshark & Co.)
-  apt:
+  ansible.builtin.apt:
     name:
       - wireshark
       - dsniff
       - nmap
 
 - name: Add User to group wireshark
-  user:
+  ansible.builtin.user:
     name: "{{ username }}"
     groups: wireshark
-    append: yes
+    append: true
 
 - name: Install systemsoft
-  apt:
+  ansible.builtin.apt:
     name:
       - gpart
       - parted
       - testdisk
-      - gddrescue # https://habrahabr.ru/post/236977/
+      - gddrescue         # https://habrahabr.ru/post/236977/
       - safecopy
       - ddrutility
       - ddrescueview
@@ -171,11 +171,11 @@
       - alien
 
 - name: Install MindMap
-  apt:
-    deb: "{{ freeplane_url }}"
+  ansible.builtin.apt:
+    deb: "{{ soft_freeplane_url }}"
 
 - name: Install maps
-  apt:
+  ansible.builtin.apt:
     name:
       - qgis
       - marble
@@ -183,12 +183,12 @@
       - josm-l10n
 
 - name: Install soft for studying
-  apt:
+  ansible.builtin.apt:
     name:
       - scilab
 
 - name: Install Spyder3, Python version of Matlab
-  apt:
+  ansible.builtin.apt:
     name:
       - python3-sympy
       - pandoc-citeproc
@@ -196,23 +196,22 @@
       - python3-sphinx-rtd-theme
       - latexmk
       - python3-pandas
-      - python3-scipy 
+      - python3-scipy
       - spyder3
 
 - name: Install githug
-  gem:
+  community.general.gem:
     name: githug
-    user_install: no
-    state: latest
+    user_install: false
 
 - name: Install Dolphin file manager with mediainfo support
-  apt:
+  ansible.builtin.apt:
     name:
       - dolphin
       - breeze-icon-theme
 
 - name: Install tutors
-  apt:
+  ansible.builtin.apt:
     name:
       - c++-annotations-html
       - c++-annotations-pdf
@@ -230,58 +229,58 @@
       - tipp10
 
 - name: Install child soft
-  apt:
+  ansible.builtin.apt:
     name:
       - junior-typing
       - tuxtype
 
 - name: Install fork of youtube-dl
-  pip:
+  ansible.builtin.pip:
     name: yt-dlp
-    state: latest
     extra_args: "--user --compile"
   become: false
 
-- name: Add USERNAME to group dialout for EggBot
-  user:
+- name: Add User to group dialout for EggBot
+  ansible.builtin.user:
     name: "{{ username }}"
     groups: dialout
-    append: yes
+    append: true
 
 - name: Prequire for next tasks
-  apt:
+  ansible.builtin.apt:
     name: python3-psutil
 
 - name: Set Type of Powersaving on login screen
-  become: yes
+  become: true
   become_user: gdm
-  become_method: sudo
-  dconf:
+  become_method: ansible.builtin.sudo
+  community.general.dconf:
     key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type"
     value: "'blank'"
 
 - name: Set Timout of Powersaving on login screen
-  become: yes
+  become: true
   become_user: gdm
-  become_method: sudo
-  dconf:
+  become_method: ansible.builtin.sudo
+  community.general.dconf:
     key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-timeout"
     value: '30'
 
 - name: Set Type of Powersaving on login screen
-  become: yes
+  become: true
   become_user: gdm
-  become_method: sudo
-  dconf:
+  become_method: ansible.builtin.sudo
+  community.general.dconf:
     key: "/org/gnome/settings-daemon/plugins/power/lid-close-ac-action"
     value: "'blank'"
 
 - name: Add Neovim repo
   ansible.builtin.apt_repository:
-    repo: deb https://ppa.launchpadcontent.net/neovim-ppa/stable/ubuntu jammy main
+    repo: "deb https://ppa.launchpadcontent.net/neovim-ppa/stable/ubuntu \
+           jammy main"
     state: present
     filename: neovim
 
 - name: Install Neovim
-  apt:
+  ansible.builtin.apt:
     name: neovim

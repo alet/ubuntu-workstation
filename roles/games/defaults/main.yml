@@ -1,3 +1,4 @@
 ---
 
-steam_deb: https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
+games_steam_deb: >
+  https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb

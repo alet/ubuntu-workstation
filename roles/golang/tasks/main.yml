@@ -1,20 +1,16 @@
 ---
 
-- name: Download Go Lang install
-  get_url:
-    url: "{{ golang }}"
-    dest: /tmp/golang.tgz
-
 - name: Install Go Lang
   become: false
-  command:
+  ansible.builtin.unarchive:
+    src: "{{ golang_tar }}"
     creates: "~/go"
-    chdir: "~/"
-    cmd: tar -xzf /tmp/golang.tgz
+    remote_src: true
+    dest: ~/
 
 - name: Install Tour
   become: false
-  shell:
+  ansible.builtin.shell:
     creates: ~/go/bin/tour
     chdir: "~/"
     cmd: PATH="~/go/bin:$PATH" ~/go/bin/go install golang.org/x/tour@latest

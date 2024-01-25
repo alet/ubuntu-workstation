@@ -1,6 +1,7 @@
+---
 
 - name: Install WindowMaker and deps
-  apt:
+  ansible.builtin.apt:
     name:
       - xorg
       - wmaker

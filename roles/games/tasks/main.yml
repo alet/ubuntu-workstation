@@ -2,37 +2,37 @@
 # Steam install
 
 - name: Accept question
-  debconf:
+  ansible.builtin.debconf:
     name: steam
     question: 'steam/question'
     value: 'I AGREE'
     vtype: 'select'
 
 - name: Accept license
-  debconf:
+  ansible.builtin.debconf:
     name: steam
     question: 'steam/license'
     value: ''
     vtype: 'note'
 
 - name: Add Steam
-  apt:
-    deb: "{{ steam_deb }}"
+  ansible.builtin.apt:
+    deb: "{{ games_steam_deb }}"
 
 - name: Add Lutris repo
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: ppa:lutris-team/lutris
 
 - name: Install Lutris
-  apt:
+  ansible.builtin.apt:
     name: lutris
 
 - name: Install PlayOnLinux
-  apt:
+  ansible.builtin.apt:
     name: playonlinux
 
 - name: Install games from official repo
-  apt:
+  ansible.builtin.apt:
     name:
       - angband
       - zangband

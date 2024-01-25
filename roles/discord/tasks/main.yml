@@ -1,11 +1,10 @@
 ---
 
 - name: Check if Discord is installed
-  package_facts:
+  ansible.builtin.package_facts:
     manager: "auto"
 
-
 - name: Discord Install
-  apt:
+  ansible.builtin.apt:
     deb: "{{ discord_deb }}"
   when: "'discord' is not in ansible_facts.packages"

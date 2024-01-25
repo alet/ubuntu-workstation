@@ -2,8 +2,8 @@
 # Android MTP utilites install
 
 - name: Android MTP utilites install
-  apt:
+  ansible.builtin.apt:
     name:
-        - android-file-transfer
-        - go-mtpfs
-        - jmtpfs
+      - android-file-transfer
+      - go-mtpfs
+      - jmtpfs

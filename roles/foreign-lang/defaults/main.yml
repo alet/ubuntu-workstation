@@ -1,3 +1,4 @@
 ---
-#dictionary: http://download.huzheng.org/ru/stardict-mueller7-2.4.2.tar.bz2
-dictionary: https://ftp.tw.freebsd.org/distfiles/stardict/stardict-mueller7-2.4.2.tar.bz2
+# dictionary: http://download.huzheng.org/ru/stardict-mueller7-2.4.2.tar.bz2
+fl_dictionary: >
+  https://ftp.tw.freebsd.org/distfiles/stardict/stardict-mueller7-2.4.2.tar.bz2

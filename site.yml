@@ -4,11 +4,11 @@
 
 - name: Configure as workstation
   hosts: all
-  become: yes
+  become: true
   gather_facts: true
   vars:
-    - timezone: Europe/Kiev
-    - username: "{{ lookup('env', 'USER') }}"
+    timezone: Europe/Kiev
+    username: "{{ lookup('env', 'USER') }}"
 
   roles:
     - lenovo
@@ -27,7 +27,7 @@
     - virt
     - windowmaker
     - foliate
-#   - slavonic
+    # - slavonic
     - soft
     - wps_office
     - ticktick
@@ -35,7 +35,7 @@
     - obs_studio
     - develop
     - textract
-#   - r-studio
+    # - r-studio
     - brave
     - chrome
     - opera
@@ -44,12 +44,12 @@
     - zoom
     - skype
     - fonts
-#   - riot.im
+    # - riot.im
     - discord
     - calibre
-#   - anydesk
+    # - anydesk
     - games
     - foreign-lang
-#   - teamviewer
+    # - teamviewer
     - whdd
     - users

@@ -2,10 +2,10 @@
 # Foliate Install
 
 - name: Add repo
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: 'ppa:apandada1/foliate'
     state: present
 
 - name: Install Foliate
-  apt:
+  ansible.builtin.apt:
     name: foliate

@@ -1,23 +1,21 @@
 ---
 
 - name: Accept license
-  debconf:
+  ansible.builtin.debconf:
     name: ttf-mscorefonts-installer
     question: 'msttcorefonts/accepted-mscorefonts-eula'
     value: 'true'
     vtype: 'select'
 
 - name: Install Microsoft Fonts
-  apt:
-    # 20.04 Fix
-#    deb: http://ftp.de.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.8_all.deb
+  ansible.builtin.apt:
     name:
       - ttf-mscorefonts-installer
-    update_cache: yes
+    update_cache: true
 
 # Needs for layout indicator in 22.04
 - name: Remove Noto Emoji
-  apt:
+  ansible.builtin.apt:
     name:
       - fonts-noto-color-emoji
     state: 'absent'

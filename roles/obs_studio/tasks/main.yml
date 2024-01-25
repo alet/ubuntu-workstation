@@ -2,10 +2,10 @@
 # OBS Studio Install
 
 - name: Add repo
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: 'ppa:obsproject/obs-studio'
     state: present
 
 - name: Install OBS Studio
-  apt:
+  ansible.builtin.apt:
     name: obs-studio

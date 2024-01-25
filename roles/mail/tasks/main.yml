@@ -3,94 +3,94 @@
 # Postfix configure and install
 
 - name: Configure Postfix
-  debconf:
+  ansible.builtin.debconf:
     name: postfix
     question: 'postfix/main_mailer_type'
     vtype: 'select'
     value: 'Satellite system'
 
 - name: Configure Postfix
-  debconf:
+  ansible.builtin.debconf:
     name: postfix
     question: 'postfix/mailname'
     vtype: 'string'
     value: "{{ ansible_host }}"
 
 - name: Configure Postfix
-  debconf:
+  ansible.builtin.debconf:
     name: postfix
     question: 'postfix/relayhost'
     vtype: 'string'
     value: ""
 
 - name: Configure Postfix
-  debconf:
+  ansible.builtin.debconf:
     name: postfix
     question: 'postfix/root_address'
     vtype: 'string'
     value: "{{ username }}"
 
 - name: Configure Postfix
-  debconf:
+  ansible.builtin.debconf:
     name: postfix
     question: 'postfix/destinations'
     vtype: 'string'
     value: "{{ ansible_host }}, localhost.localdomain, localhost"
 
 - name: Configure Postfix
-  debconf:
+  ansible.builtin.debconf:
     name: postfix
     question: 'postfix/mynetworks'
     vtype: 'string'
     value: "127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128"
 
 - name: Configure Postfix
-  debconf:
+  ansible.builtin.debconf:
     name: postfix
     question: 'postfix/mailbox_limit'
     vtype: 'string'
     value: "0"
 
 - name: Configure Postfix
-  debconf:
+  ansible.builtin.debconf:
     name: postfix
     question: 'postfix/recipient_delim'
     vtype: 'string'
     value: "+"
 
 - name: Configure Postfix
-  debconf:
+  ansible.builtin.debconf:
     name: postfix
     question: 'postfix/protocols'
     vtype: 'string'
     value: "ipv4"
 
 - name: Install Postfix
-  apt:
+  ansible.builtin.apt:
     name: postfix
 
 ###############
 
 - name: Install MUA
-  apt:
-    allow_downgrade: yes
+  ansible.builtin.apt:
+    allow_downgrade: true
     name:
       - thunderbird=1:91.8.0+build2-0ubuntu1
 
 - name: Freeze correct Thunderbird
-  dpkg_selections:
+  ansible.builtin.dpkg_selections:
     name: thunderbird
     selection: hold
 
 - name: Install local mail
-  apt:
+  ansible.builtin.apt:
     name:
       - dovecot-imapd
 
 - name: Configure dovecot
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: "/etc/dovecot/dovecot.conf"
     regexp: '^listen.*'
     insertafter: '^#listen'
     line: listen = 127.0.0.1
-  notify: restart dovecot
+  notify: Restart dovecot

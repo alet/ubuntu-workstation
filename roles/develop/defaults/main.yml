@@ -1,3 +1,4 @@
 ---
 
-aws_ssm_plugin: https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb
+develop_aws_ssm_plugin: >
+  https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb

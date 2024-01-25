@@ -1,21 +1,20 @@
 ---
 
 - name: Add kernel param
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: "/etc/default/grub"
     regexp: ^GRUB_CMDLINE_LINUX_DEFAULT="(?!.*?(tpm_tis.interrupts=0))(.*)
     line: GRUB_CMDLINE_LINUX_DEFAULT="tpm_tis.interrupts=0 \2
-    backrefs: yes
+    backrefs: true
 
 # https://wiki.ubuntu.com/IntelQuickSyncVideo
 - name: Install Video drivers & hardware utils
-  apt:
+  ansible.builtin.apt:
     name:
       - ubuntu-restricted-addons
       - vainfo
       - tlp
 
 - name: Set bounds for laptop battery
-  command:
+  ansible.builtin.command:  # noqa: no-changed-when can't look for current state
     cmd: /usr/sbin/tlp setcharge 70 80 BAT0
-

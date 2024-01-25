@@ -2,17 +2,17 @@
 # Google Chrome install
 
 - name: Add repo key
-  apt_key:
+  ansible.builtin.apt_key:
     url: https://dl-ssl.google.com/linux/linux_signing_key.pub
     state: present
 
 
 - name: Add repo
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main
     state: present
     filename: google-chrome
 
 - name: Add Chrome
-  apt:
+  ansible.builtin.apt:
     name: google-chrome-stable

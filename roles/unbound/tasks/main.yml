@@ -3,80 +3,80 @@
 # Change resolver to local Unbound
 
 - name: Install Dependencies
-  apt:
+  ansible.builtin.apt:
     name:
       - resolvconf
       - unbound
-    update_cache: yes
+    update_cache: true
 
 - name: Add server record to hosts
-  lineinfile:
+  ansible.builtin.lineinfile:
     name: /etc/hosts
     line: "192.0.47.9\twww.internic.net"
 
 - name: Install service to update root.hints
-  copy:
+  ansible.builtin.copy:
     dest: /etc/systemd/system/roothints.service
     owner: root
     group: root
-    mode: 0644
+    mode: '0644'
     src: "roothints.service"
 
 - name: Install timer to update root.hints
-  copy:
+  ansible.builtin.copy:
     dest: /etc/systemd/system/roothints.timer
     owner: root
     group: root
-    mode: 0644
+    mode: '0644'
     src: "roothints.timer"
 
 - name: Enable timer to update root.hints
-  systemd:
+  ansible.builtin.systemd:
     state: started
-    enabled: yes
+    enabled: true
     name: roothints.timer
 
 - name: Download root.hints
-  systemd:
+  ansible.builtin.systemd:
     state: started
-    enabled: no
+    enabled: false
     name: roothints.service
 
 - name: Conifgure unbound
-  copy:
+  ansible.builtin.copy:
     dest: /etc/unbound/unbound.conf.d/main.conf
     owner: root
     group: root
-    mode: 0644
+    mode: '0644'
     src: "main.conf"
 
 - name: Enable and run unbound
-  systemd:
+  ansible.builtin.systemd:
     state: started
-    enabled: yes
+    enabled: true
     name: unbound
 
 - name: Add local resourses - cinema
-  lineinfile:
+  ansible.builtin.lineinfile:
     name: /etc/hosts
     line: "192.168.1.2\tcinema.galato.pp.ua\tcinema"
 
 - name: Add local resourses - mature
-  lineinfile:
+  ansible.builtin.lineinfile:
     name: /etc/hosts
     line: "192.168.1.2\tmature.galato.pp.ua\tmature"
 
 - name: Add local resourses - encycl
-  lineinfile:
+  ansible.builtin.lineinfile:
     name: /etc/hosts
     line: "192.168.1.2\tencycl.galato.pp.ua\tencycl"
 
 - name: Add local resourses - munin
-  lineinfile:
+  ansible.builtin.lineinfile:
     name: /etc/hosts
     line: "192.168.1.2\tmunin.galato.pp.ua\tmunin"
 
 - name: Add local resourses - mail
-  lineinfile:
+  ansible.builtin.lineinfile:
     name: /etc/hosts
     line: "192.168.1.2\tmail.galato.pp.ua\tmail"

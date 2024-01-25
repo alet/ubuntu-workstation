@@ -2,24 +2,24 @@
 # Install tools helping with english language books
 
 - name: Add GoldenDict
-  apt:
+  ansible.builtin.apt:
     name: goldendict
 
 - name: Add console StarDict
-  apt:
+  ansible.builtin.apt:
     name: sdcv
 
 - name: Create directory for dictionaries
-  file:
+  ansible.builtin.file:
     path: /usr/share/stardict/dic
     state: directory
     owner: root
     group: root
-    mode: 0755
+    mode: '0755'
 
 - name: Unpack dictionary
-  unarchive:
-    src: "{{ dictionary }}"
-    remote_src: yes
+  ansible.builtin.unarchive:
+    src: "{{ fl_dictionary }}"
+    remote_src: true
     dest: /usr/share/stardict/dic
     extra_opts: --strip-components=1
