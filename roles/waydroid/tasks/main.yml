@@ -1,17 +1,22 @@
 ---
 # Waydroid install
 
-- name: Add repo key
-  ansible.builtin.apt_key:
-    url: https://repo.waydro.id/waydroid.gpg
-    state: present
+- name: Add Waydroid repo
+  block:
+    - name: Repo key
+      ansible.builtin.get_url:
+        url: https://repo.waydro.id/waydroid.gpg
+        dest: /etc/apt/keyrings/waydroid.gpg
+        mode: '0644'
+        force: true
 
-
-- name: Add repo
-  ansible.builtin.apt_repository:
-    repo: deb [arch=amd64] https://repo.waydro.id/ jammy main
-    state: present
-    filename: waydroid
+    - name: Repo file
+      ansible.builtin.apt_repository:
+        repo: >-
+          deb [arch=amd64 signed-by=/etc/apt/keyrings/waydroid.gpg]
+          https://repo.waydro.id/ jammy main
+        state: present
+        filename: waydroid
 
 - name: Add Waydroid
   ansible.builtin.apt:
