@@ -170,9 +170,14 @@
       - reptyr
       - alien
 
-- name: Install MindMap
+- name: Check if FreePlane is installed
+  ansible.builtin.package_facts:
+    manager: "auto"
+
+- name: Install MindMap (FreePlane)
   ansible.builtin.apt:
     deb: "{{ soft_freeplane_url }}"
+  when: "'freeplane' is not in ansible_facts.packages"
 
 - name: Install maps
   ansible.builtin.apt:
