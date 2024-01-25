@@ -1,10 +1,24 @@
 ---
 # Foliate Install
 
-- name: Add repo
-  ansible.builtin.apt_repository:
-    repo: 'ppa:apandada1/foliate'
-    state: present
+- name: Add Foliate repo
+  block:
+    - name: Repo key
+      ansible.builtin.get_url:
+        url: >-
+          https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xA507B2BBA7803E3B
+        dest: /etc/apt/keyrings/foliate.asc
+        mode: '0644'
+        force: true
+
+    - name: Repo file
+      ansible.builtin.apt_repository:
+        repo: >-
+          deb [arch=amd64 signed-by=/etc/apt/keyrings/foliate.asc]
+          https://ppa.launchpadcontent.net/apandada1/foliate/ubuntu
+          jammy main
+        state: present
+        filename: foliate
 
 - name: Install Foliate
   ansible.builtin.apt:
