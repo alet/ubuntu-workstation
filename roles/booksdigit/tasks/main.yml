@@ -31,9 +31,24 @@
       - pdftk
       - pdfposter
 
-- name: Scan Tailor's repo
-  ansible.builtin.apt_repository:
-    repo: ppa:alex-p/scantailor
+- name: Add ScanTailor repo
+  block:
+    - name: Repo key
+      ansible.builtin.get_url:
+        url: >-
+          https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xA4BCBD87CEF9E52D
+        dest: /etc/apt/keyrings/scantailor.asc
+        mode: '0644'
+        force: true
+
+    - name: Repo file
+      ansible.builtin.apt_repository:
+        repo: >-
+          deb [arch=amd64 signed-by=/etc/apt/keyrings/scantailor.asc]
+          https://ppa.launchpadcontent.net/alex-p/scantailor/ubuntu
+          jammy main
+        state: present
+        filename: scantailor
 
 - name: Install ScanTailor
   ansible.builtin.apt:
