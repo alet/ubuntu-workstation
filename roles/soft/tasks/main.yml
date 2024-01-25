@@ -199,12 +199,6 @@
       - python3-scipy 
       - spyder3
 
-#- name: Install LanguageTool
-#  snap:
-#    name:
-#      - languagetool
-#      - google-play-music-desktop-player
-
 - name: Install githug
   gem:
     name: githug
