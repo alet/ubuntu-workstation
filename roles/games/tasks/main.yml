@@ -20,8 +20,22 @@
     deb: "{{ games_steam_deb }}"
 
 - name: Add Lutris repo
-  ansible.builtin.apt_repository:
-    repo: ppa:lutris-team/lutris
+  block:
+    - name: Repo key
+      ansible.builtin.get_url:
+        url: >-
+          https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x37B90EDD4E3EFAE4
+        dest: /etc/apt/keyrings/lutris.asc
+        mode: '0644'
+        force: true
+
+    - name: Repo file
+      ansible.builtin.apt_repository:
+        repo: >-
+          deb [arch=amd64 signed-by=/etc/apt/keyrings/lutris.asc]
+          http://ppa.launchpad.net/lutris-team/lutris/ubuntu jammy main
+        state: present
+        filename: lutris
 
 - name: Install Lutris
   ansible.builtin.apt:
