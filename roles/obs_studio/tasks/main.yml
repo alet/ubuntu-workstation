@@ -1,10 +1,24 @@
 ---
 # OBS Studio Install
 
-- name: Add repo
-  ansible.builtin.apt_repository:
-    repo: 'ppa:obsproject/obs-studio'
-    state: present
+- name: Add OBS-Studio repo
+  block:
+    - name: Repo key
+      ansible.builtin.get_url:
+        url: >-
+          https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xEFC71127F425E228
+        dest: /etc/apt/keyrings/obsstudio.asc
+        mode: '0644'
+        force: true
+
+    - name: Repo file
+      ansible.builtin.apt_repository:
+        repo: >-
+          deb [arch=amd64 signed-by=/etc/apt/keyrings/obsstudio.asc]
+          https://ppa.launchpadcontent.net/obsproject/obs-studio/ubuntu
+          jammy main
+        state: present
+        filename: obsstudio
 
 - name: Install OBS Studio
   ansible.builtin.apt:
