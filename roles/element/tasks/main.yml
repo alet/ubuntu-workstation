@@ -1,0 +1,28 @@
+---
+- name: Run apt upgrade
+  ansible.builtin.apt:
+    upgrade: "yes"
+    update_cache: true
+    cache_valid_time: 432000
+
+- name: Add Element-desktop repo
+  block:
+    - name: Repo key
+      ansible.builtin.get_url:
+        url: >-
+          https://packages.element.io/debian/element-io-archive-keyring.gpg
+        dest: /etc/apt/keyrings/element.gpg
+        mode: '0644'
+        force: true
+
+    - name: Repo file
+      ansible.builtin.apt_repository:
+        repo: >-
+          deb [arch=amd64 signed-by=/etc/apt/keyrings/element.gpg]
+          https://packages.element.io/debian/ default main
+        state: present
+        filename: element
+
+- name: Install element
+  ansible.builtin.apt:
+    name: element-desktop
