@@ -1,6 +1,6 @@
 # Ubuntu Workstation
 
-This playbook configure typical workstation on Ubuntu
+This playbook configures typical workstation on Ubuntu
 
 If you configure localhost you need install ansible & git before. Ansible should be at least 2.1 so in 16.04 you need install it by pip
 
