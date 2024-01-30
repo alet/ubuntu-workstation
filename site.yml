@@ -22,6 +22,7 @@
     - android
     - bluetooth
     - booksdigit
+    - develop
     - golang
     - mail
     - virt
@@ -33,7 +34,6 @@
     - ticktick
     - musicbrainz
     - obs_studio
-    - develop
     - textract
     # - r-studio
     - brave

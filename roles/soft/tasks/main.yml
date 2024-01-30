@@ -209,6 +209,11 @@
     name: githug
     user_install: false
 
+- name: Install Java support for OpenOffice
+  ansible.builtin.apt:
+    name:
+      - libreoffice-java-common
+
 - name: Install Dolphin file manager with mediainfo support
   ansible.builtin.apt:
     name:
