@@ -25,7 +25,9 @@
 
 - name: Add .NET Core SDK
   ansible.builtin.apt:
-    name: dotnet-sdk-6.0
+    name:
+      - dotnet-sdk-6.0
+      - dotnet-sdk-8.0
 
 - name: Perl tools for developing
   ansible.builtin.apt:
@@ -84,3 +86,8 @@
 - name: Install Node.js
   ansible.builtin.apt:
     name: nodejs
+
+- name: Install linters' depends
+  ansible.builtin.apt:
+    name:
+      - shellcheck
