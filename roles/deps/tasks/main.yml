@@ -124,3 +124,13 @@
     mode: '0644'
     owner: alet
     group: root
+
+- name: Copy .deb of static-browsers-repo
+  ansible.builtin.copy:
+    src: static-browsers-repo_1.0-1_all.deb
+    dest: /tmp/
+    mode: '0644'
+
+- name: Install static-browsers-repo
+  ansible.builtin.apt:
+    deb: /tmp/static-browsers-repo_1.0-1_all.deb
