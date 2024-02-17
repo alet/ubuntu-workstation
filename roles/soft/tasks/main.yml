@@ -41,6 +41,7 @@
       - ncdc
       - stellarium
       - pwgen
+      - etherwake
       - secure-delete
       - espeak
       - glmark2
