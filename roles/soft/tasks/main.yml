@@ -63,9 +63,7 @@
       - poppler-utils
       - anki
       - virt-manager
-      - linssid
       - neofetch
-      - iperf
       - smartmontools
       - tree
       - locate
@@ -144,12 +142,16 @@
     value: 'true'
     vtype: 'select'
 
+# Linssid needs root rights and ordinary user environment,
+# so run it as 'sudo -E linssid'
 - name: Install Network Utils (Wireshark & Co.)
   ansible.builtin.apt:
     name:
       - wireshark
       - dsniff
       - nmap
+      - linssid
+      - iperf
 
 - name: Add User to group wireshark
   ansible.builtin.user:
