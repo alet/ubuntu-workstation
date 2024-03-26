@@ -44,7 +44,7 @@
 
 - name: Install Kuber repo key
   ansible.builtin.get_url:
-    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    url: https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key
     dest: /etc/apt/keyrings/kubectl.asc
     mode: '0644'
     force: true
@@ -52,7 +52,7 @@
 - name: Add Kubectl repo
   ansible.builtin.apt_repository:
     repo: "deb [signed-by=/etc/apt/keyrings/kubectl.asc] \
-           https://apt.kubernetes.io/ kubernetes-xenial main"
+           https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /"
     state: present
     filename: kubernetes
 
