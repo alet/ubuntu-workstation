@@ -30,7 +30,7 @@
     - foliate
     # - slavonic
     - soft
-    - wps_office
+    # - wps_office
     - ticktick
     - musicbrainz
     - obs_studio
