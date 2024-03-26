@@ -4,6 +4,9 @@
   ansible.builtin.apt:
     name:
       - ntpdate
+      - gpsd
+      - gpsd-clients
+      - chrony
       - curl
       - traceroute
       - nfs-common
