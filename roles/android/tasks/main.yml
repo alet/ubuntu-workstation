@@ -7,3 +7,5 @@
       - android-file-transfer
       - go-mtpfs
       - jmtpfs
+      - adb
+      - fastboot
