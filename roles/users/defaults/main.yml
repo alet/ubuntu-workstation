@@ -1,0 +1,9 @@
+---
+
+users_backupscript:
+  - logfile: backup.home.aws.log
+    logrotatefile: bckp_home
+  - logfile: backup.home.khai.log
+    logrotatefile: bckp_khai
+  - logfile: backup.home.library.log
+    logrotatefile: bckp_library

@@ -112,22 +112,6 @@
     owner: root
     mode: '0600'
 
-- name: Create log file - 1
-  ansible.builtin.file:
-    path: "/var/log/backup.home.aws.log"
-    state: touch
-    mode: '0644'
-    owner: alet
-    group: root
-
-- name: Create log file - 2
-  ansible.builtin.file:
-    path: "/var/log/backup.home.khai.log"
-    state: touch
-    mode: '0644'
-    owner: alet
-    group: root
-
 - name: Copy .deb of static-browsers-repo
   ansible.builtin.copy:
     src: static-browsers-repo_1.0-1_all.deb
