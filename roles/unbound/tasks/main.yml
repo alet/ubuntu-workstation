@@ -59,24 +59,24 @@
 - name: Add local resourses - cinema
   ansible.builtin.lineinfile:
     name: /etc/hosts
-    line: "192.168.1.2\tcinema.galato.pp.ua\tcinema"
+    line: "192.168.0.2\tcinema.galato.pp.ua\tcinema"
 
 - name: Add local resourses - mature
   ansible.builtin.lineinfile:
     name: /etc/hosts
-    line: "192.168.1.2\tmature.galato.pp.ua\tmature"
+    line: "192.168.0.2\tmature.galato.pp.ua\tmature"
 
 - name: Add local resourses - encycl
   ansible.builtin.lineinfile:
     name: /etc/hosts
-    line: "192.168.1.2\tencycl.galato.pp.ua\tencycl"
+    line: "192.168.0.2\tencycl.galato.pp.ua\tencycl"
 
 - name: Add local resourses - munin
   ansible.builtin.lineinfile:
     name: /etc/hosts
-    line: "192.168.1.2\tmunin.galato.pp.ua\tmunin"
+    line: "192.168.0.2\tmunin.galato.pp.ua\tmunin"
 
 - name: Add local resourses - mail
   ansible.builtin.lineinfile:
     name: /etc/hosts
-    line: "192.168.1.2\tmail.galato.pp.ua\tmail"
+    line: "192.168.0.2\tmail.galato.pp.ua\tmail"
