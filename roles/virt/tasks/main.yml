@@ -145,6 +145,18 @@
     groups: kvm
     append: true
 
+- name: Add USERNAME to group libvirt
+  ansible.builtin.user:
+    name: "{{ username }}"
+    groups: libvirt
+    append: true
+
+- name: Add USERNAME to group input
+  ansible.builtin.user:
+    name: "{{ username }}"
+    groups: input
+    append: true
+
 - name: Add USERNAME to group disk
   ansible.builtin.user:
     name: "{{ username }}"
