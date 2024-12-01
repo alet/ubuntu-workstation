@@ -1,4 +1,6 @@
 ---
+# https://unix.stackexchange.com/questions/777544/is-the-web-server-on-repo-skype-com-down
+# skype is in snap now
 
 - name: Add Skype repo
   block:
@@ -14,6 +16,7 @@
         repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/skype.asc] \
                https://repo.skype.com/deb stable main"
         state: present
+        filename: skype
 
 - name: Install skype
   ansible.builtin.apt:
