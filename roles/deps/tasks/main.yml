@@ -29,6 +29,7 @@
       - wev
       - netdiag
       - knockd
+      - ugrep
     update_cache: true
 
 - name: Repo for correct wpasupplicant
