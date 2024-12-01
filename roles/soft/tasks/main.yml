@@ -18,6 +18,7 @@
       - vlc-plugin-bittorrent
       - cmus
       - mediainfo
+      - mkvtoolnix
       - unrar
       - audacious
       - mp3wrap
@@ -26,6 +27,7 @@
       - handbrake-cli
       - mencoder
       - mplayer-doc
+      - mpv
       - audacity
       - soundconverter
       - easytag
@@ -34,6 +36,7 @@
       - simple-scan
       - darktable
       - blender
+      - shotcut
       - nautilus-dropbox
       - vifm
       - transmission
