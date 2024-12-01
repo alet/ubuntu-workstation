@@ -52,6 +52,7 @@
       - glmark2
       - w3m
       - lynx
+      - kiwix
       - kcharselect
       - inkscape
       - sigil
