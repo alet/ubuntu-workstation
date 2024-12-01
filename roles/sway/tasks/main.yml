@@ -44,5 +44,7 @@
 - name: Add USERNAME to group video
   ansible.builtin.user:
     name: "{{ username }}"
-    groups: video
+    groups:
+      - video
+      - audio
     append: true
