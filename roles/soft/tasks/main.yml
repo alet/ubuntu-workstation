@@ -46,6 +46,7 @@
       - stellarium
       - pwgen
       - etherwake
+      - wakeonlan
       - secure-delete
       - espeak
       - glmark2
@@ -119,6 +120,7 @@
       - parallel
       - zeal
       - powertop
+      - nethogs
       - tmux
       - hwb
       - mtree-netbsd
