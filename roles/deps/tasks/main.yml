@@ -130,3 +130,9 @@
     owner: root
     group: root
     mode: '0644'
+
+- name: Install waifu2x depends
+  ansible.builtin.apt:
+    name:
+      - libmagickwand-dev
+      - libraqm-dev
