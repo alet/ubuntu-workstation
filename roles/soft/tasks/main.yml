@@ -249,6 +249,14 @@
       - junior-typing
       - tuxtype
 
+- name: Install command line readers
+  ansible.builtin.pip:
+    name:
+      - epr-reader
+      - epy-reader
+    extra_args: "--user --compile"
+  become: false
+
 - name: Install fork of youtube-dl
   ansible.builtin.pip:
     name: yt-dlp
