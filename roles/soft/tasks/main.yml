@@ -197,11 +197,6 @@
       - josm
       - josm-l10n
 
-- name: Install soft for studying
-  ansible.builtin.apt:
-    name:
-      - scilab
-
 - name: Install Spyder3, Python version of Matlab
   ansible.builtin.apt:
     name:
