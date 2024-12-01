@@ -91,3 +91,11 @@
   ansible.builtin.apt:
     name:
       - shellcheck
+
+- name: Install Haskell's depends
+  ansible.builtin.apt:
+    name:
+      - libicu-dev
+      - libncurses-dev
+      - libgmp-dev
+      - zlib1g-dev
