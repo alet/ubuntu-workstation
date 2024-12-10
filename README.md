@@ -7,8 +7,9 @@ If you configure localhost you need install ansible & git before. Ansible should
 You may want change default values for example for golang (roles/golang/default/main.yml)
 
 ```sh
-sudo apt-get install git ansible python3-pip
+sudo apt install git ansible python3-pip
 ansible-galaxy collection install community.general
+pip3 install --user --compile --upgrade ansible
 git clone https://github.com/alet/ubuntu-workstation.git/
 cd ubuntu-workstation
 ansible-playbook --ask-become-pass -c local -i 'SHORT_HOSTNAME,' site.yml
