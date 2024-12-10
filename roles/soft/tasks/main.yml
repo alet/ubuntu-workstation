@@ -297,11 +297,23 @@
     value: "'blank'"
 
 - name: Add Neovim repo
-  ansible.builtin.apt_repository:
-    repo: "deb https://ppa.launchpadcontent.net/neovim-ppa/stable/ubuntu \
-           jammy main"
-    state: present
-    filename: neovim
+  block:
+    - name: Repo key
+      ansible.builtin.get_url:
+        url: >-
+          https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x55F96FCF8231B6DD
+        dest: /etc/apt/keyrings/neovim.asc
+        mode: '0644'
+        force: true
+
+    - name: Repo file
+      ansible.builtin.apt_repository:
+        repo: >-
+          deb [arch=amd64 signed-by=/etc/apt/keyrings/neovim.asc]
+          https://ppa.launchpadcontent.net/neovim-ppa/stable/ubuntu
+          jammy main
+        state: present
+        filename: neovim
 
 - name: Install Neovim
   ansible.builtin.apt:
