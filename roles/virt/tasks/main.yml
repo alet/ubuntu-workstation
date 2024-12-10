@@ -20,6 +20,7 @@
       - libvirt0
       - libnm-dev
       - virtualbox
+      - virt-manager
     update_cache: true
 
 - name: Run apt upgrade

@@ -68,7 +68,6 @@
       - pandoc
       - poppler-utils
       - anki
-      - virt-manager
       - neofetch
       - smartmontools
       - tree
