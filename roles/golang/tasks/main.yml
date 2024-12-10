@@ -13,4 +13,4 @@
   ansible.builtin.shell:
     creates: ~/go/bin/tour
     chdir: "~/"
-    cmd: PATH="~/go/bin:$PATH" ~/go/bin/go install golang.org/x/tour@latest
+    cmd: PATH="~/go/bin:$PATH" ~/go/bin/go install golang.org/x/website/tour@latest
