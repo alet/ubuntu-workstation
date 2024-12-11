@@ -1,0 +1,10 @@
+---
+
+- name: Check if Obsidian is installed
+  ansible.builtin.package_facts:
+    manager: "auto"
+
+- name: Obsidian Install
+  ansible.builtin.apt:
+    deb: "{{ obsidian_deb }}"
+  when: "'obsidian' is not in ansible_facts.packages"

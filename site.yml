@@ -32,6 +32,7 @@
     - soft
     # - wps_office
     - ticktick
+    - obsidian
     - musicbrainz
     - obs_studio
     - textract
