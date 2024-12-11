@@ -1,5 +1,3 @@
 ---
 
 virt_wired_card: enp0s31f6
-virt_vagrant_deb: >
-  https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_x86_64.deb
