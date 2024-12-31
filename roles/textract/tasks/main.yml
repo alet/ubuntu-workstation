@@ -26,4 +26,4 @@
   become: false
   ansible.builtin.pip:
     name: textract
-    extra_args: "--user --compile"
+    extra_args: "--user --compile --upgrade"
