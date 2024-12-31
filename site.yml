@@ -11,6 +11,7 @@
     username: "{{ lookup('env', 'USER') }}"
 
   roles:
+    - snap
     - lenovo
     - firewall
     - deps

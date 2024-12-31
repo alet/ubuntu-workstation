@@ -1,0 +1,101 @@
+---
+
+- name: Remove snap packages
+  block:
+    - name: Check installed snaps
+      ansible.builtin.command: "snap list"
+      register: snap_list_output
+      changed_when: false
+      failed_when: false
+
+    - name: Snap packages
+      ansible.builtin.set_fact:
+        snap_list: "{{ snap_list_output.stdout_lines[1:] }}"
+      when:
+        - snap_list_output.rc == 0
+
+    - name: Uninstall snaps
+      when:
+        - snap_list_output.rc == 0
+        - snap_list | length > 0
+      block:
+        - name: uninstall snaps
+          community.general.snap:
+            name: "{{ item | split | first }}"
+            state: absent
+          failed_when: false
+          loop: "{{ snap_list }}"
+
+        - name: check installed snaps
+          ansible.builtin.command: "snap list"
+          register: snap_packages
+          changed_when: false
+
+        - name: snap packages
+          ansible.builtin.set_fact:
+            snap_list: "{{ snap_packages.stdout_lines[1:] }}"
+
+- name: Shutdown services, sockets and timers
+  become: true
+  ansible.builtin.service:
+    name: "{{ item }}"
+    state: "stopped"
+    enabled: false
+  failed_when: false
+  loop:
+    - snapd.service
+    - snapd.socket
+    - snapd.seeded.service
+  loop_control:
+    label: "{{ item }}"
+
+- name: Purge all this bullshit
+  block:
+
+    - name: Get mountpoints
+      ansible.builtin.setup:
+        gather_subset:
+          - mounts
+
+    - name: Find nap mountpoints
+      ansible.builtin.set_fact:
+        snap_mounts: "{{ ansible_mounts | snap_mounts }}"
+
+    - name: Unmount snap
+      become: true
+      ansible.posix.mount:
+        path: "{{ item }}"
+        state: unmounted
+      loop:
+        - "{{ snap_mounts }}"
+      when:
+        - snap_mounts | count > 0
+
+    - name: Remove snap mountpoint^
+      become: true
+      ansible.posix.mount:
+        path: "{{ item }}"
+        state: absent
+      loop:
+        - "{{ snap_mounts }}"
+      when:
+        - snap_mounts | count > 0
+
+    - name: Remove snapd
+      become: true
+      ansible.builtin.apt:
+        name: snapd
+        autoremove: true
+        purge: true
+        state: absent
+
+    - name: Remove snapd-related directories
+      become: true
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: absent
+      loop:
+        - /etc/apt/apt.conf.d/20snapd.conf
+        - /snap
+      loop_control:
+        label: "{{ item }}"

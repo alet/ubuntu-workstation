@@ -7,3 +7,4 @@ site.retry
 *.swp
 *.deb
 tags
+__pycache__
