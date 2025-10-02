@@ -71,21 +71,11 @@
 
 ###############
 
-- name: Install MUA
-  ansible.builtin.apt:
-    allow_downgrade: true
-    name:
-      - thunderbird=1:91.8.0+build2-0ubuntu1
-
-- name: Freeze correct Thunderbird
-  ansible.builtin.dpkg_selections:
-    name: thunderbird
-    selection: hold
-
 - name: Install local mail
   ansible.builtin.apt:
     name:
       - dovecot-imapd
+      - thunderbird-locale-ru
 
 - name: Configure dovecot
   ansible.builtin.lineinfile:
