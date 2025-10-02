@@ -87,6 +87,11 @@
   ansible.builtin.apt:
     name: nodejs
 
+- name: Install linter
+  ansible.builtin.apt:
+    name:
+      - clangd
+
 - name: Install linters' depends
   ansible.builtin.apt:
     name:
