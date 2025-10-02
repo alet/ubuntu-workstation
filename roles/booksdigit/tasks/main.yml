@@ -54,7 +54,6 @@
   ansible.builtin.apt:
     name:
       - scantailor-advanced
-      - scantailor-universal
 
 - name: Script for converting
   become: false
