@@ -16,6 +16,7 @@
       - qemu-kvm
       - qemu-system-arm
       - samba
+      - ethtool
       - dmg2img
       - genisoimage
       - libvirt0
@@ -87,6 +88,9 @@
     slave_type: 'bridge'
     hairpin: false
     state: 'present'
+
+- name: Configure Wake on Lan
+  shell: /usr/bin/nmcli connection modify {{ virt_wired_card }} 802-3-ethernet.wake-on-lan magic && /usr/sbin/ethtool -s {{ virt_wired_card }} wol g
 
 - name: HDD
   ansible.builtin.lineinfile:
