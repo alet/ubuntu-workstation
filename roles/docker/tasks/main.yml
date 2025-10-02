@@ -1,0 +1,31 @@
+---
+# Foliate Install
+
+- name: Add Docker repo
+  block:
+    - name: Repo key
+      ansible.builtin.get_url:
+        url: >-
+          https://download.docker.com/linux/ubuntu/gpg
+        dest: /etc/apt/keyrings/docker.asc
+        mode: '0644'
+        force: true
+
+    - name: Repo file
+      ansible.builtin.apt_repository:
+        repo: >-
+          deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc]
+          https://download.docker.com/linux/ubuntu
+          jammy stable
+        state: present
+        filename: docker
+
+- name: Install Docker
+  ansible.builtin.apt:
+    name: docker-ce
+
+- name: Add USERNAME to group docker for using without sudo
+  ansible.builtin.user:
+    name: "{{ username }}"
+    groups: docker
+    append: true
