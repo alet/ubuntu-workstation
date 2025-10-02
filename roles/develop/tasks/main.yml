@@ -4,7 +4,11 @@
 
 - name: Add utils
   ansible.builtin.apt:
-    name: git-extras
+    name:
+      - git-extras
+      - clonezilla
+      - stress-ng
+      - lm-sensors
 
 - name: Add libgdiplus, needs for KP
   ansible.builtin.apt:
@@ -62,6 +66,7 @@
       - kubectl
       - awscli
       - jq
+      - xsltproc
       - python3-boto3
 
 - name: Install awscli session manager plugin

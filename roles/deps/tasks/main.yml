@@ -30,6 +30,7 @@
       - netdiag
       - knockd
       - ugrep
+      - fio
     update_cache: true
 
 - name: Repo for correct wpasupplicant

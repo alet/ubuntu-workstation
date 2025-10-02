@@ -76,6 +76,7 @@
       - task-spooler
       - clamav
       - pv
+      - rename
       - progress
       - xzdec
       - zstd
