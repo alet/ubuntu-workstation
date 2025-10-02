@@ -144,6 +144,12 @@
     name: "{{ username }}"
     shell: /usr/bin/zsh
 
+- name: Add User colord to lp (for scanning)
+  ansible.builtin.user:
+    name: colord
+    groups: lp
+    append: true
+
 - name: Configure Wireshark
   ansible.builtin.debconf:
     name: wireshark-common
