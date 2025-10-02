@@ -61,10 +61,12 @@
     mode: '04755'
 
 - name: Configure parameter of bridge
-  ansible.builtin.lineinfile:
-    path: /usr/lib/systemd/network/99-default.link
-    regexp: ^MACAddressPolicy=persistent$
-    line: MACAddressPolicy=none
+  ansible.builtin.copy:
+    dest: "/etc/systemd/network/10-br0.link"
+    src: "br0.link"
+    group: root
+    owner: root
+    mode: '0644'
 
 - name: Create bridge
   community.general.nmcli:
@@ -82,6 +84,7 @@
     master: 'br0'
     ifname: "{{ virt_wired_card }}"
     type: 'bridge-slave'
+    method6: 'disabled'
     slave_type: 'bridge'
     hairpin: false
     state: 'present'
