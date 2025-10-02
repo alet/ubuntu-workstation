@@ -250,6 +250,7 @@
     name:
       - junior-typing
       - tuxtype
+      - gcompris
 
 - name: Install command line readers
   ansible.builtin.pip:
