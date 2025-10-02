@@ -21,10 +21,12 @@
       - mkvtoolnix
       - unrar
       - audacious
+      - rhythmbox
       - mp3wrap
       - mercurial
       - handbrake
       - handbrake-cli
+      - gpac
       - mencoder
       - mplayer-doc
       - mpv
