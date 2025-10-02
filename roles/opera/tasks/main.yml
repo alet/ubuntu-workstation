@@ -1,6 +1,13 @@
 ---
 # Opera install
 
+- name: Configure Opera
+  ansible.builtin.debconf:
+    name: opera
+    question: 'opera-stable/add-deb-source'
+    value: 'false'
+    vtype: 'select'
+
 - name: Add repo key
   ansible.builtin.get_url:
     url: https://deb.opera.com/archive.key
