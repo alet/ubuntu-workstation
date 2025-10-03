@@ -54,10 +54,3 @@
   ansible.builtin.apt:
     name:
       - scantailor-advanced
-
-- name: Script for converting
-  become: false
-  ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/ashipunov/img2djvu/master/img2djvu
-    dest: ~/bin/img2djvu
-    mode: '0755'
