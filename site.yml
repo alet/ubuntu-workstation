@@ -12,7 +12,8 @@
 
   roles:
     - snap
-    - lenovo
+    - role: lenovo
+      when: ansible_facts['bios_vendor'] == 'LENOVO'
     - firewall
     - deps
     - unbound
@@ -27,7 +28,8 @@
     - docker
     - golang
     - mail
-    - virt
+    - role: virt
+      when: ansible_facts['board_name'] != "VirtualBox"
     - windowmaker
     - foliate
     # - slavonic

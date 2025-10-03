@@ -4,6 +4,7 @@
   ansible.builtin.apt:
     name:
       - ntpdate
+      - network-manager
       - gpsd
       - gpsd-clients
       - chrony

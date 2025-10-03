@@ -18,6 +18,7 @@
   ansible.builtin.apt:
     deb: >
       https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb
+    allow_downgrade: true
 
 - name: Add https transport
   ansible.builtin.apt:

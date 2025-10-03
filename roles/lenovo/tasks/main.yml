@@ -14,6 +14,7 @@
       - ubuntu-restricted-addons
       - vainfo
       - tlp
+    update_cache: true
 
 - name: Set bounds for laptop battery
   ansible.builtin.command:  # noqa: no-changed-when can't look for current state
