@@ -20,6 +20,7 @@
       - dmg2img
       - genisoimage
       - libvirt0
+      - libvirt-dev
       - libnm-dev
       - virt-manager
     update_cache: true
