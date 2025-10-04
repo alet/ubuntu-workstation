@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   # config.vm.box = "alvistack/ubuntu-22.04"
-  config.vm.box = "generic/ubuntu2204"
+  config.vm.box = "cloud-image/ubuntu-22.04"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -57,23 +57,26 @@ Vagrant.configure("2") do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  config.vm.provider "virtualbox" do |vb|
+  config.vm.provider "libvirt" do |vb|
     # Display the VirtualBox GUI when booting the machine
-    vb.gui = true
-    vb.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
+    # vb.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
   
     # Customize the amount of memory on the VM:
     vb.memory = "8192"
+    vb.cpus = "2"
+    vb.video_type = "virtio"
+    vb.video_accel3d = true
+    vb.storage_pool_name = "default"
+    vb.machine_virtual_size = 40 # Disk size in GiB
   end
   #
   # View the documentation for the provider you are using for more
   # information on available options.
 
-  # config.disksize.size = '16GB'
   # config.ssh.shell = 'sh'
-  config.vm.network "public_network", :bridge => 'br0'
+  config.vm.network "public_network", :dev => 'br0', :mode => 'bridge'
 
-  # config.vm.hostname = "vps.galato.pp.ua"
+  config.vm.hostname = "workstation-test"
   # Set the name of the VM. See: http://stackoverflow.com/a/17864388/100134
   config.vm.define :"workstation_test" do |t|
   end
@@ -82,8 +85,6 @@ Vagrant.configure("2") do |config|
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
   # config.vm.provision "shell", inline: <<-SHELL
-  #   apt-get update
-  #   apt-get install -y apache2
   # SHELL
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "site.yml"

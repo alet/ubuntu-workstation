@@ -29,7 +29,7 @@
     - golang
     - mail
     - role: virt
-      when: ansible_facts['board_name'] != "VirtualBox"
+      when: (ansible_facts['board_name'] != "VirtualBox") and (ansible_facts['chassis_vendor'] != "QEMU")
     - windowmaker
     - foliate
     # - slavonic
