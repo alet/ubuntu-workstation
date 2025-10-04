@@ -66,6 +66,7 @@ Vagrant.configure("2") do |config|
     vb.cpus = "2"
     vb.video_type = "virtio"
     vb.video_accel3d = true
+    vb.graphics_type = "spice"
     vb.storage_pool_name = "default"
     vb.machine_virtual_size = 40 # Disk size in GiB
   end
